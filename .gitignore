@@ -1,0 +1,10 @@
+# OS
+.DS_Store
+._*
+
+# Project
+.idea
+build
+
+# NodeJS
+node_modules

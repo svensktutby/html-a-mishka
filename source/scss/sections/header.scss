@@ -1,0 +1,88 @@
+/* page-header
+============================== */
+.header {
+  &__top {
+    background-color: #f0f2f4;
+    border-bottom: 1px solid #e2e2e2;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 41px 0 32px;
+
+    @media screen and (max-width: 1000px ) {
+      flex-direction: column;
+    }
+
+    .button {
+      @media screen and (max-width: 1080px ) {
+        margin-right: 15px;
+      }
+
+      @media screen and (max-width: 1000px ) {
+        margin-right: 0;
+      }
+    }
+
+    .logo {
+      @media screen and (max-width: 1080px ) {
+        margin-left: 15px;
+      }
+
+      @media screen and (max-width: 1000px ) {
+        margin-left: 0;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+.contacts {
+  text-align: right;
+}
+
+.contact {
+  display: inline-block;
+  padding: 10px 10px 8px;
+
+  vertical-align: top;
+  color: #424242;
+
+  transition: all 0.3s;
+
+  &:hover {
+    color: lighten(#424242, 20%);
+  }
+
+  &:first-child {
+    margin-right: 8px;
+    padding-right: 18px;
+
+    border-right: 1px solid #e2e2e2;
+  }
+
+  &__icon {
+    margin-right: 7px;
+
+    font-size: 1.5rem;
+    vertical-align: middle;
+
+    &--email {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.facebook-icon {
+  display: inline-block;
+  margin: 7px 0;
+  padding: 5px 8px 1px;
+
+  color: #fff;
+
+  background-color: #1287bf;
+  border-radius: 3px;
+}

@@ -1,0 +1,197 @@
+/* MIXINS
+============================== */
+
+/* PX to REM function
+******************************/
+@function rem($px) {
+  @return ($px / $fs_rem) * 1rem;
+}
+
+/* Font size and line height
+******************************/
+@mixin font-size($fs: $fs_base, $lh: false) {
+  //fs: $fs; /* Fallback in px */
+  font-size: rem($fs);
+  @if $lh != false {
+    line-height: ($lh / $fs);
+  }
+}
+
+/* Font Styles
+******************************/
+@mixin font-source-sans($size: false, $colour: false, $weight: false, $lh: false) {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  @if $size {
+    font-size: $size;
+  }
+  @if $colour {
+    color: $colour;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+}
+
+/* Image width
+******************************/
+@mixin img($width: false, $display: block, $max-width: 100%, $height: auto) {
+  display: $display;
+  max-width: $max-width;
+  height: $height;
+  @if $width != false {
+    width: $width;
+  }
+}
+
+/* Clearfix
+******************************/
+%clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+/* Visually hidden element
+******************************/
+%visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+/* Clear marging/padding
+******************************/
+@mixin clear {
+  margin: 0;
+  padding: 0;
+}
+
+/* Clear list
+******************************/
+@mixin clear-list {
+  @include clear;
+  list-style: none;
+}
+
+/* Circle
+******************************/
+@mixin circle($size, $color) {
+  width: $size;
+  height: $size;
+  background-color: $color;
+  border-radius: $size/2;
+}
+
+/* Centering flex element
+******************************/
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Centering absolute element
+******************************/
+@mixin absol-center($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+/* Inline-block
+******************************/
+@mixin inline-block($value: top) {
+  display: inline-block;
+  vertical-align: $value;
+}
+
+/* Pseudo element
+******************************/
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+  content: $content;
+  position: $pos;
+  display: $display;
+}
+
+/* CSS triangle
+******************************/
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false) {
+  @include pseudo($pos: $position);
+  width: 0;
+  height: 0;
+  @if $round {
+    border-radius: 3px;
+  }
+  @if $direction == down {
+    margin-top: 0 - round( $size / 2.5 );
+    border-top: $size solid $color;
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+  } @else if $direction == up {
+    margin-bottom: 0 - round( $size / 2.5 );
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+    border-left: $size solid transparent;
+  } @else if $direction == right {
+    margin-right: -$size;
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+  } @else if  $direction == left {
+    margin-left: -$size;
+    border-top: $size solid transparent;
+    border-right: $size solid $color;
+    border-bottom: $size solid transparent;
+  }
+}
+
+/* Media queries
+******************************/
+@mixin xl {
+  @media screen and (max-width: #{$screen-xl - 1px}) {
+    @content;
+  }
+} // Extra large devices
+@mixin lg {
+  @media screen and (max-width: #{$screen-lg - 1px}) {
+    @content;
+  }
+} // Large devices
+@mixin md {
+  @media screen and (max-width: #{$screen-md - 1px}) {
+    @content;
+  }
+} // Medium devices
+@mixin sm {
+  @media screen and (max-width: #{$screen-sm - 1px}) {
+    @content;
+  }
+} // Small devices
+@mixin xs {
+  @media screen and (max-width: #{$screen-xs - 1px}) {
+    @content;
+  }
+} // Tiny devices
