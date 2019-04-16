@@ -4,7 +4,8 @@
 
 # Project
 .idea
-build
+build/
+source/css/*.css
 
 # NodeJS
-node_modules
+node_modules/
