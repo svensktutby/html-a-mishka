@@ -1,3 +1,5 @@
 /* COMMON
 ============================== */
-
+.visually-hidden {
+  @extend %visually-hidden;
+}
