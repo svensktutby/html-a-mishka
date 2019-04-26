@@ -1,0 +1,27 @@
+{
+  "name": "mishka",
+  "version": "0.1.0",
+  "description": "Личный проект «Мишка» от HTML Academy",
+  "author": "svensk",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svensktutby/html-a-mishka.git"
+  },
+  "scripts": {
+    "build": "gulp styles",
+    "start": "gulp serve"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.5",
+    "del": "^4.1.0",
+    "gulp": "^4.0.1",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-posthtml": "^3.0.4",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "posthtml-include": "^1.2.0"
+  }
+}
