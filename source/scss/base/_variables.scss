@@ -1,0 +1,46 @@
+/* VARIABLES
+============================== */
+/* Base colors
+******************************/
+$black:                 #000;
+$grey:                  #444;
+$light-grey:            #f1f1f1;
+$white:                 #fff;
+$teal:                  #56c3b2;
+$light-teal:            #63d1bb;
+
+/* Semantic colors
+******************************/
+$text-color:            $grey;
+$text-color-dark:       $black;
+$body-bg:               $white;
+$link-color:            $black;
+$link-color--hover:     rgba($black, 0.6);
+$link-color--active:    rgba($black, 0.3);
+
+$border-color:          rgba($grey, 0.3);
+
+/* Fonts
+******************************/
+$ff-base:               "Open Sans", "Arial", sans-serif; // Font-family base
+$fs-rem:                16px; // Font-size rem(html)
+$fs-base:               15px; // Font-size base(body)
+$lh-base:               1.6; // Line-height base
+
+/* Sizes
+******************************/
+$screen-xl:             1150px; // Large tablets and desktops
+$screen-lg:             992px; // Tablets and small desktops
+$screen-md:             768px; // Small tablets (portrait view)
+$screen-sm:             480px; // Small tablets (portrait view)
+$screen-xs:             320px; // Tiny phones
+
+$padding-xl:            0 50px; // Padding for large tablets and desktops
+$padding-md:            0 50px; // Padding for small tablets (portrait view)
+$padding-xs:            0 30px; // Padding for tiny phones
+
+/* Other
+******************************/
+$transition-time:       0.3s;
+$burger-part-height:    2px;
+$burger-part-bg-color:  #000;

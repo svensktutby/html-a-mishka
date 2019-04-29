@@ -1,0 +1,26 @@
+/* BASE STYLES
+============================== */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+
+  font-size: $fs-rem;
+}
+
+body {
+  font-size: $fs-base;
+  line-height: $lh-base;
+  font-family: $ff-base;
+
+  background-color: $body-bg;
+  color: $text-color;
+}
+
+.visually-hidden {
+  @extend %visually-hidden;
+}

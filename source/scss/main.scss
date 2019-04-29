@@ -7,12 +7,16 @@
 
 /*! Base
 ******************************/
-@import "global/fonts";
-@import "global/variables";
-@import "global/mixins";
-@import "global/base";
-@import "global/common";
+@import "base/fonts";
+@import "base/variables";
+@import "base/mixins";
+@import "base/base";
 
-/*! Parts
+/*! Partials
 ******************************/
-@import "sections/header";
+@import "partials/burger";
+@import "partials/header";
+@import "partials/main-nav";
+@import "partials/site-nav";
+@import "partials/optional-nav";
+@import "partials/footer";
