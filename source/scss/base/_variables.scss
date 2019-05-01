@@ -6,6 +6,7 @@ $black:                 #000;
 $grey:                  #444;
 $light-grey:            #f1f1f1;
 $white:                 #fff;
+$dark-teal:             #46c1ae;
 $teal:                  #56c3b2;
 $light-teal:            #63d1bb;
 
@@ -17,7 +18,6 @@ $body-bg:               $white;
 $link-color:            $black;
 $link-color--hover:     rgba($black, 0.6);
 $link-color--active:    rgba($black, 0.3);
-
 $border-color:          rgba($grey, 0.3);
 
 /* Fonts
@@ -35,12 +35,12 @@ $screen-md:             768px; // Small tablets (portrait view)
 $screen-sm:             480px; // Small tablets (portrait view)
 $screen-xs:             320px; // Tiny phones
 
-$padding-xl:            0 50px; // Padding for large tablets and desktops
-$padding-md:            0 50px; // Padding for small tablets (portrait view)
-$padding-xs:            0 30px; // Padding for tiny phones
+$padding-xl:            50px; // Padding for large tablets and desktops
+$padding-md:            50px; // Padding for small tablets (portrait view)
+$padding-xs:            30px; // Padding for tiny phones
 
 /* Other
 ******************************/
 $transition-time:       0.3s;
 $burger-part-height:    2px;
-$burger-part-bg-color:  #000;
+$burger-part-bg-color:  $black;

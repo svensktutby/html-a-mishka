@@ -1,0 +1,15 @@
+/* page-header
+============================== */
+.page-header {
+  background-color: $white;
+}
+
+.page-header__inner {
+  @include container;
+}
+
+.page-header__logo {
+  padding: 20px;
+
+  text-align: center;
+}

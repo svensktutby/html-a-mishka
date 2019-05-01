@@ -69,6 +69,17 @@
   list-style: none;
 }
 
+/* No outline
+******************************/
+@mixin no-outline {
+  outline: none;
+  background: transparent;
+
+  &::before {
+    display: none;
+  }
+}
+
 /* Circle
 ******************************/
 @mixin circle($size, $color) {
@@ -80,7 +91,7 @@
 
 /* Centering flex element
 ******************************/
-@mixin flex-center() {
+@mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,3 +188,25 @@
     @content;
   }
 } // Tiny devices
+
+/* Container with media queries
+******************************/
+@mixin container {
+  @include md {
+    padding-left: $padding-md;
+    padding-right: $padding-md;
+    max-width: $screen-md;
+  }
+
+  @include xl {
+    padding-left: $padding-xl;
+    padding-right: $padding-xl;
+    max-width: $screen-xl;
+  }
+
+  display: block;
+  margin: 0 auto;
+  padding-left: $padding-xs;
+  padding-right: $padding-xs;
+  max-width: $screen-xs;
+}

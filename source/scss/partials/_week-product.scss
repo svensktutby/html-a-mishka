@@ -1,0 +1,43 @@
+/* week-product
+============================== */
+.week-product {
+  padding: 30px 0;
+  background-color: #fff;
+}
+
+.week-product__inner {
+  @include container;
+}
+
+.week-product__mark {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1;
+  color: $light-teal;
+  text-transform: uppercase;
+}
+
+.week-product__description {
+  p {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.6;
+    color: $text-color;
+  }
+}
+
+.week-product__img {
+  @include img();
+
+  margin: 0 auto;
+}
+
+.week-product__price {
+  display: block;
+
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.4117647059;
+  text-align: center;
+  color: $text-color;
+}

@@ -1,3 +1,9 @@
 /* logo
 ============================== */
+.logo__link {
+  @include inline-block();
+}
 
+.logo__img {
+  @include img();
+}

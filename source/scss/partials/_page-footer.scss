@@ -1,0 +1,29 @@
+/* page-footer
+============================== */
+.page-footer {
+  background-color: $light-grey;
+}
+
+.page-footer__inner {
+  @include container;
+}
+
+.page-footer__logo {
+  @include md {
+    display: block;
+  }
+
+  display: none;
+}
+
+.page-footer__socials {
+  max-width: 140px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.page-footer__copyright {
+  padding: 20px 40px;
+
+  border-top: 1px solid $border-color;
+}

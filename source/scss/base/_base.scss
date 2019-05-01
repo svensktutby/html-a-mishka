@@ -13,14 +13,37 @@ html {
 }
 
 body {
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+
   font-size: $fs-base;
   line-height: $lh-base;
   font-family: $ff-base;
+  color: $text-color;
 
   background-color: $body-bg;
-  color: $text-color;
 }
 
 .visually-hidden {
   @extend %visually-hidden;
+}
+
+.section-title {
+  @include md {
+    font-size: 43px;
+    line-height: 1.1627906977;
+  }
+
+  @include xl {
+    font-size: 53px;
+    line-height: 1.0754716981;
+  }
+
+  margin: 0 0 10px 0;
+
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 1.2;
+  color: $text-color-dark;
 }

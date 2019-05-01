@@ -1,0 +1,9 @@
+/* socials
+============================== */
+.socials__list {
+  @include clear-list;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}

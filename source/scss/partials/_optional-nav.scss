@@ -4,9 +4,46 @@
   @include clear-list;
 }
 
+.optional-nav__item {
+  &::before {
+    @include pseudo();
+
+    right: 0;
+    left: 0;
+
+    height: 1px;
+
+    background-color: $border-color;
+  }
+}
+
 .optional-nav__link {
+  position: relative;
+
+  display: block;
+  padding: 30px 0 30px 45px;
+
   font-weight: 700;
   font-size: 17px;
   color: $link-color;
   text-decoration: none;
+
+  transition: color $transition-time;
+
+  &:hover,
+  &:focus {
+    color: $link-color--hover;
+
+    outline: none;
+  }
+
+  &:active {
+    color: $link-color--active;
+  }
+}
+
+.optional-nav__icon {
+  @include absol-center(false, true);
+
+  left: 0;
 }

@@ -3,7 +3,7 @@
 
 /*! Vendor
 ******************************/
-//@import "../../node_modules/normalize.scss/normalize";
+@import "../../node_modules/normalize.scss/normalize";
 
 /*! Base
 ******************************/
@@ -14,9 +14,21 @@
 
 /*! Partials
 ******************************/
+@import "partials/button";
 @import "partials/burger";
-@import "partials/header";
+@import "partials/page-header";
+@import "partials/logo";
 @import "partials/main-nav";
 @import "partials/site-nav";
+@import "partials/store-nav";
 @import "partials/optional-nav";
-@import "partials/footer";
+@import "partials/hero";
+@import "partials/week-product";
+@import "partials/specification-product";
+@import "partials/advantages";
+@import "partials/reviews";
+@import "partials/contacts";
+@import "partials/socials";
+@import "partials/copyright";
+@import "partials/page-footer";
+@import "partials/modal-cart";

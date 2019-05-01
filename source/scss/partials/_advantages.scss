@@ -1,0 +1,43 @@
+/* advantages
+============================== */
+.advantages {
+  padding: 30px 0;
+}
+
+.advantages__inner {
+  @include container;
+}
+
+.advantages__title {
+  margin-bottom: 25px;
+}
+
+.advantages__list {
+  @include clear-list;
+}
+
+.advantages__item {
+  margin-bottom: 30px;
+}
+
+.advantages__icon {
+  @include img();
+}
+
+.advantages__text {
+  @include inline-block();
+  @include md {
+    max-width: 300px;
+
+    font-size: 20px;
+    line-height: 1.1;
+  }
+
+  max-width: 260px;
+  padding-top: 15px;
+
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.1764705882;
+  color: $text-color-dark;
+}

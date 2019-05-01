@@ -1,0 +1,16 @@
+/* copyright
+============================== */
+.copyright__link {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  color: $text-color-dark;
+  text-decoration: none;
+}
+
+.copyright__text {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+}
