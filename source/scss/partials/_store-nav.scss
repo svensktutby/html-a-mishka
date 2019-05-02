@@ -4,6 +4,25 @@
   @include clear-list;
 
   display: none;
+
+  @include xl {
+    position: absolute;
+    display: flex;
+    left: 0;
+    bottom: -50px;
+  }
+}
+
+.store-nav__item {
+  @include xl {
+    margin-left: 35px;
+  }
+
+  &:first-child {
+    @include xl {
+      margin-left: 0;
+    }
+  }
 }
 
 .store-nav__link {

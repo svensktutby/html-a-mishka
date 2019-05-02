@@ -2,11 +2,16 @@
 ============================== */
 .main-nav {
   @include md {
+    position: relative;
     display: flex;
+    justify-content: space-between;
   }
 
   &::after {
     @include pseudo();
+    @include md {
+      display: none;
+    }
 
     right: 0;
     left: 0;
@@ -32,7 +37,10 @@
 
 .main-nav__delivery {
   @include md {
+    position: absolute;
     display: block;
+    right: 0;
+    bottom: -50px;
   }
 
   display: none;

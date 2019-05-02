@@ -2,11 +2,37 @@
 ============================== */
 .site-nav {
   @include clear-list;
+  @include md {
+    position: absolute;
+    display: flex;
+    left: 0;
+    bottom: -50px;
+  }
+
+  @include xl {
+    position: static;
+    bottom: initial;
+    left: initial;
+    order: -1;
+    align-items: center;
+  }
 }
 
 .site-nav__item {
+  @include md {
+    margin-left: 35px;
+  }
+
+  &:first-child {
+    @include md {
+      margin-left: 0;
+    }
+  }
   &::before {
     @include pseudo();
+    @include md {
+      display: none;
+    }
 
     right: 0;
     left: 0;
@@ -18,8 +44,14 @@
 }
 
 .site-nav__link {
-  display: block;
-  padding: 30px 0 30px 45px;
+  @include md {
+    padding-left: 0;
+    min-height: auto;
+  }
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+  padding-left: 45px;
 
   font-weight: 700;
   font-size: 17px;
