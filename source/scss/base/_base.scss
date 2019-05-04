@@ -21,6 +21,7 @@ body {
   line-height: $lh-base;
   font-family: $ff-base;
   color: $text-color;
+  word-wrap: break-word;
 
   background-color: $body-bg;
 }
@@ -34,12 +35,12 @@ body {
     font-size: 43px;
     line-height: 1.1627906977;
   }
-
   @include xl {
     font-size: 53px;
     line-height: 1.0754716981;
   }
 
+  min-width: 0; //Fix for flex with word-wrap
   margin: 0 0 10px 0;
 
   font-weight: 700;

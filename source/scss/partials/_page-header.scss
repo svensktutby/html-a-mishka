@@ -1,15 +1,24 @@
 /* page-header
 ============================== */
 .page-header {
-  background-color: $white;
   @include md {
     position: relative;
+
+    border-top: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
   }
+
+  background-color: $white;
 }
 
 .page-header__inner {
-  @include container;
+  @include container(xs);
+  @include md {
+    @include container(md);
+  }
+  @include xl {
+    @include container(xl);
+  }
 }
 
 .page-header__logo {

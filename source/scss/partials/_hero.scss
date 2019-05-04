@@ -16,16 +16,12 @@
 
 .hero__inner {
   @include md {
-    max-width: $screen-md;
+    @include container(md);
+
     min-height: 747px;
-    margin: 0 auto;
-    padding: 0 $padding-md;
   }
   @include xl {
-    max-width: $screen-xl;
-    min-height: 747px;
-    margin: 0 auto;
-    padding: 0 $padding-xl;
+    @include container(xl);
   }
 
   display: flex;
@@ -36,20 +32,20 @@
 
 .hero__title {
   @include md {
-    max-width: initial;
+    width: initial;
     padding-top: 150px;
 
     font-size: 43px;
     line-height: 1.1627906977;
   }
   @include xl {
-    max-width: 660px;
+    width: 660px;
 
     font-size: 53px;
     line-height: 1.0754716981;
   }
 
-  max-width: 260px;
+  width: 260px;
   margin: 0 auto;
   padding-top: 70px;
 
@@ -59,7 +55,7 @@
 }
 
 .hero__list {
-  @include clear-list;
+  @include reset-list;
   @include md {
     display: flex;
   }

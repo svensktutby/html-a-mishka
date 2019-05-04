@@ -5,7 +5,10 @@
 }
 
 .advantages__inner {
-  @include container;
+  @include container(xs);
+  @include md {
+    @include container(md);
+  }
 }
 
 .advantages__title {
@@ -13,10 +16,17 @@
 }
 
 .advantages__list {
-  @include clear-list;
+  @include reset-list;
+  @include md {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .advantages__item {
+  @include md {
+    width: 50%;
+  }
   margin-bottom: 30px;
 }
 
@@ -27,13 +37,13 @@
 .advantages__text {
   @include inline-block();
   @include md {
-    max-width: 300px;
+    width: 300px;
 
     font-size: 20px;
     line-height: 1.1;
   }
 
-  max-width: 260px;
+  width: 260px;
   padding-top: 15px;
 
   font-weight: 700;

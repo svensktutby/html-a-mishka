@@ -3,6 +3,7 @@
 .main-nav {
   @include md {
     position: relative;
+
     display: flex;
     justify-content: space-between;
   }
@@ -15,14 +16,18 @@
 
     right: 0;
     left: 0;
-
     height: 1px;
+    min-width: 320px;
 
     background-color: $border-color;
   }
 }
 
 .main-nav__heading {
+  @include xl {
+    order: 2;
+  }
+
   position: relative;
 }
 
@@ -30,17 +35,18 @@
   @include md {
     display: none;
   }
-
   @include absol-center(false, true);
+
   right: 0;
 }
 
 .main-nav__delivery {
   @include md {
     position: absolute;
-    display: block;
     right: 0;
     bottom: -50px;
+
+    display: block;
   }
 
   display: none;

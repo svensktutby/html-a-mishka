@@ -5,7 +5,13 @@
 }
 
 .page-footer__inner {
-  @include container;
+  @include container(xs);
+  @include md {
+    @include container(md);
+  }
+  @include xl {
+    @include container(xl);
+  }
 }
 
 .page-footer__logo {

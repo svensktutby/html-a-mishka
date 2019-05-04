@@ -77,7 +77,7 @@
   <!-- / ========= page-main ========= \ -->
   <main class="page-main">
     <div class="page-main__heading">
-      <h1 class="page-main__title">Вязание на заказ</h1>
+      <h1 class="page-main__title section-title">Вязание на заказ</h1>
     </div>
 
     <div class="page-main__content">
@@ -85,18 +85,19 @@
         <p>Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы
           уточнить детали.</p>
       </div>
-      <form class="page-main__form order-form" action="#">
+      <form class="order-form" action="#">
         <fieldset class="order-form__fieldset order-form__fieldset--type">
           <legend class="order-form__legend">Тип</legend>
           <div class="order-form__field-list order-form__field-list--type">
             <div class="order-form__field">
-              <input class="visually-hidden" type="radio" name="type" id="type-accessory" value="accessory" checked>
+              <input class="order-form__input visually-hidden" type="radio" name="type" id="type-accessory"
+                     value="accessory" checked>
               <label class="order-form__label order-form__label--type" for="type-accessory">Аксессуар для
                 интерьера</label>
             </div>
             <div class="order-form__field">
-              <input class="visually-hidden" type="radio" name="type" id="type-toy" value="toy">
-              <label class="order-form__label order-form__label--type" for="type-toy">Аксессуар для интерьера</label>
+              <input class="order-form__input visually-hidden" type="radio" name="type" id="type-toy" value="toy">
+              <label class="order-form__label order-form__label--type" for="type-toy">Детская игрушка</label>
             </div>
           </div>
         </fieldset>
@@ -105,27 +106,33 @@
           <legend class="order-form__legend">Цвет</legend>
           <div class="order-form__field-list order-form__field-list--color">
             <div class="order-form__field">
-              <input class="visually-hidden" type="checkbox" name="color" id="color-white" value="white" checked>
+              <input class="order-form__input visually-hidden" type="checkbox" name="color" id="color-white"
+                     value="white" checked>
               <label class="order-form__label order-form__label--color" for="color-white">Белый</label>
             </div>
             <div class="order-form__field">
-              <input class="visually-hidden" type="checkbox" name="color" id="color-gray" value="gray" checked>
-              <label class="order-form__label order-form__label--color" for="color-gray">Белый</label>
+              <input class="order-form__input visually-hidden" type="checkbox" name="color" id="color-gray"
+                     value="gray" checked>
+              <label class="order-form__label order-form__label--color" for="color-gray">Серый</label>
             </div>
             <div class="order-form__field">
-              <input class="visually-hidden" type="checkbox" name="color" id="color-tiffany" value="tiffany">
+              <input class="order-form__input visually-hidden" type="checkbox" name="color" id="color-tiffany"
+                     value="tiffany">
               <label class="order-form__label order-form__label--color" for="color-tiffany">«Тиффани»</label>
             </div>
             <div class="order-form__field">
-              <input class="visually-hidden" type="checkbox" name="color" id="color-black" value="black">
+              <input class="order-form__input visually-hidden" type="checkbox" name="color" id="color-black"
+                     value="black">
               <label class="order-form__label order-form__label--color" for="color-black">Черный</label>
             </div>
             <div class="order-form__field">
-              <input class="visually-hidden" type="checkbox" name="color" id="color-pink" value="pink">
+              <input class="order-form__input visually-hidden" type="checkbox" name="color" id="color-pink"
+                     value="pink">
               <label class="order-form__label order-form__label--color" for="color-pink">Розовый</label>
             </div>
             <div class="order-form__field">
-              <input class="visually-hidden" type="checkbox" name="color" id="color-orange" value="orange">
+              <input class="order-form__input visually-hidden" type="checkbox" name="color" id="color-orange"
+                     value="orange">
               <label class="order-form__label order-form__label--color" for="color-orange">Оранжевый</label>
             </div>
           </div>

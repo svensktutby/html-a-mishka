@@ -5,7 +5,13 @@
 }
 
 .reviews__inner {
-  @include container;
+  @include container(xs);
+  @include md {
+    @include container(md);
+  }
+  @include xl {
+    @include container(xl);
+  }
 }
 
 .reviews__item {

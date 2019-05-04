@@ -55,17 +55,11 @@
   clip: rect(0 0 0 0);
 }
 
-/* Clear margin/padding
+/* Reset list
 ******************************/
-@mixin clear {
+@mixin reset-list {
   margin: 0;
   padding: 0;
-}
-
-/* Clear list
-******************************/
-@mixin clear-list {
-  @include clear;
   list-style: none;
 }
 
@@ -191,22 +185,28 @@
 
 /* Container with media queries
 ******************************/
-@mixin container {
-  @include md {
-    padding-left: $padding-md;
-    padding-right: $padding-md;
-    max-width: $screen-md;
-  }
+@mixin container($screen: xs) {
+  margin: 0 auto;
 
-  @include xl {
+  @if $screen == xl {
     padding-left: $padding-xl;
     padding-right: $padding-xl;
-    max-width: $screen-xl;
+    width: $screen-xl;
+  } @else if $screen == lg {
+    padding-left: $padding-lg;
+    padding-right: $padding-lg;
+    width: $screen-lg;
+  } @else if $screen == md {
+    padding-left: $padding-md;
+    padding-right: $padding-md;
+    width: $screen-md;
+  } @else if $screen == sm {
+    padding-left: $padding-sm;
+    padding-right: $padding-sm;
+    width: $screen-sm;
+  } @else if $screen == xs {
+    padding-left: $padding-xs;
+    padding-right: $padding-xs;
+    width: $screen-xs;
   }
-
-  display: block;
-  margin: 0 auto;
-  padding-left: $padding-xs;
-  padding-right: $padding-xs;
-  max-width: $screen-xs;
 }

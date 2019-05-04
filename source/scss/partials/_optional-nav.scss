@@ -1,10 +1,13 @@
 /* optional-nav
 ============================== */
 .optional-nav {
-  @include clear-list;
+  @include reset-list;
   @include md {
     display: flex;
     align-items: center;
+  }
+  @include xl {
+    order: 3;
   }
 }
 
@@ -21,13 +24,14 @@
 
     right: 0;
     left: 0;
+
+    min-width: 320px;
     height: 1px;
 
     background-color: $border-color;
   }
 
   &--search {
-
     .optional-nav__text {
       @include md {
         display: none;
@@ -70,11 +74,12 @@
 .optional-nav__icon {
   @include img();
   @include md {
-    margin-left: 35px;
-    margin-right: 35px;
     position: static;
     top: initial;
     left: initial;
+
+    margin-right: 35px;
+    margin-left: 35px;
 
     transform: none;
   }

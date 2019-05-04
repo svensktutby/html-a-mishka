@@ -6,7 +6,7 @@
 
 .contacts__title {
   @include md {
-    max-width: initial;
+    width: initial;
 
     font-size: 43px;
     line-height: 1.1627906977;
@@ -16,7 +16,7 @@
     line-height: 1.0754716981;
   }
 
-  max-width: 260px;
+  width: 260px;
   margin: 0 auto 30px;
 
   font-size: 18px;
@@ -24,7 +24,7 @@
 }
 
 .contacts__list {
-  max-width: 260px;
+  width: 260px;
   margin: 0 auto 30px;
 
   border-collapse: collapse;

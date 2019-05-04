@@ -5,8 +5,12 @@
   justify-content: space-between;
   align-items: center;
 
-  color: $text-color-dark;
+  color: $link-color;
   text-decoration: none;
+
+  &:active {
+    color: $link-color--active;
+  }
 }
 
 .copyright__text {

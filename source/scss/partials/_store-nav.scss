@@ -1,7 +1,7 @@
 /* store-nav
 ============================== */
 .store-nav {
-  @include clear-list;
+  @include reset-list;
 
   display: none;
 
@@ -14,8 +14,8 @@
 }
 
 .store-nav__item {
-  @include xl {
-    margin-left: 35px;
+  @include md {
+    margin-left: 60px;
   }
 
   &:first-child {

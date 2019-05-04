@@ -1,0 +1,120 @@
+/* order-form
+============================== */
+.order-form {
+  background-color: $white;
+}
+
+.order-form__fieldset {
+  @include container(xs);
+  @include md {
+    @include container(md);
+  }
+  @include xl {
+    @include container(xl);
+  }
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  border: none;
+}
+
+.order-form__legend {
+  position: relative;
+
+  width: 100%;
+
+  font-weight: 700;
+  font-size: 17px;
+  color: $light-teal;
+  text-transform: uppercase;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+
+    display: block;
+    width: 200px;
+    height: 1px;
+
+    background-color: $light-teal;
+    transform: translateY(-50%);
+  }
+}
+
+.order-form__label--type,
+.order-form__label--color {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  margin-bottom: 20px;
+  padding-left: 65px;
+
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.0588235294;
+  color: $text-color-dark;
+  cursor: pointer;
+  user-select: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 38px;
+    height: 38px;
+
+    border: 2px solid $text-color-dark;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+  }
+}
+
+.order-form__label--type {
+  &::before {
+    border-radius: 50%;
+  }
+
+  &::after {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $light-teal;
+    left: 12px;
+    display: none;
+    top: 50%;
+
+    transform: translateY(-50%);
+  }
+}
+
+.order-form__label--color {
+  &::after {
+    width: 20px;
+    height: 10px;
+    left: 10px;
+    top: 13px;
+    background-color: transparent;
+    border-left: 2px solid $text-color-dark;
+    border-bottom: 2px solid $text-color-dark;
+    transform: rotate(-45deg);
+    display: none;
+  }
+}
+
+.order-form__input:checked + .order-form__label--type,
+.order-form__input:checked + .order-form__label--color {
+  &::after {
+    display: block;
+  }
+}
