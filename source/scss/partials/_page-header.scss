@@ -1,0 +1,29 @@
+/* page-header
+============================== */
+.page-header {
+  @include md {
+    position: relative;
+
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+  }
+
+  background-color: $white;
+}
+
+.page-header__inner {
+  @include container(xs);
+  @include md {
+    @include container(md);
+  }
+  @include xl {
+    @include container(xl);
+  }
+}
+
+.page-header__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80px;
+}

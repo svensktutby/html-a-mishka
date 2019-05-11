@@ -1,0 +1,144 @@
+/* production
+============================== */
+.production {
+  padding-bottom: 30px;
+}
+
+.production__inner {
+  @include container(xs);
+  @include md {
+    @include container(md);
+  }
+  @include xl {
+    @include container(xl);
+  }
+}
+
+.production__content {
+  @include md {
+    display: flex;
+    flex-direction: column;
+  }
+  @include xl {
+    position: relative;
+
+    min-height: 455px;
+  }
+
+  border: 1px solid $border-color;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    box-shadow: 0 6px 10px rgba(#000, 0.1);
+  }
+}
+
+.production__heading {
+  @include md {
+    justify-content: flex-start;
+    order: 2;
+    padding-top: 40px;
+    padding-bottom: 0;
+
+    border-top: 1px solid $border-color;
+  }
+  @include xl {
+    display: block;
+    margin-left: 683px;
+    padding-right: 50px;
+    padding-left: 50px;
+
+    border-top: none;
+  }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+
+  &::before {
+    content: "";
+
+    display: block;
+    width: 32px;
+    height: 32px;
+
+    background-image: url(../img/icon-video.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+}
+
+.production__title {
+  @include md {
+    max-width: initial;
+    padding-left: 35px;
+
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  @include xl {
+    padding-top: 20px;
+    padding-left: 0;
+    max-width: 160px;
+  }
+
+  max-width: 130px;
+  margin: 0;
+
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.4117647059;
+  color: $text-color-dark;
+}
+
+.production__video {
+  @include md {
+    order: 1;
+  }
+  @include xl {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 683px;
+  }
+
+  position: relative;
+}
+
+.production__image {
+  @include img(100%);
+}
+
+.production__play-button {
+  @include absol-center();
+  display: block;
+}
+
+.production__bottom {
+  @include md {
+    order: 3;
+  }
+  @include xl {
+    margin-left: 683px;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  padding: 25px;
+}
+
+.production__description {
+  padding-bottom: 10px;
+
+  font-size: 13px;
+  line-height: 1.8461538462;
+  color: $text-color;
+
+  p {
+    margin: 0 0 10px 0;
+  }
+}

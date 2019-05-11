@@ -1,0 +1,32 @@
+/* button
+============================== */
+.button {
+  display: block;
+  padding: 15px 15px;
+
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.1764705882;
+  text-align: center;
+  color: $text-color;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  border: 2px solid $text-color;
+
+  transition: border-color $transition-time, background-color $transition-time, color $transition-time;
+
+  &:hover,
+  &:focus {
+    color: $white;
+
+    background-color: $text-color;
+    outline: none;
+  }
+
+  &:active {
+    color: rgba($white, 0.3);
+
+    background-color: $text-color;
+  }
+}

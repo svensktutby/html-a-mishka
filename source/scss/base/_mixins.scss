@@ -4,34 +4,16 @@
 /* PX to REM function
 ******************************/
 @function rem($px) {
-  @return ($px / $fs_rem) * 1rem;
+  @return ($px / $fs-rem) * 1rem;
 }
 
 /* Font size and line height
 ******************************/
-@mixin font-size($fs: $fs_base, $lh: false) {
+@mixin font-size($fs: $fs-base, $lh: false) {
   //fs: $fs; /* Fallback in px */
   font-size: rem($fs);
   @if $lh != false {
     line-height: ($lh / $fs);
-  }
-}
-
-/* Font Styles
-******************************/
-@mixin font-source-sans($size: false, $colour: false, $weight: false, $lh: false) {
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  @if $size {
-    font-size: $size;
-  }
-  @if $colour {
-    color: $colour;
-  }
-  @if $weight {
-    font-weight: $weight;
-  }
-  @if $lh {
-    line-height: $lh;
   }
 }
 
@@ -73,18 +55,23 @@
   clip: rect(0 0 0 0);
 }
 
-/* Clear marging/padding
+/* Reset list
 ******************************/
-@mixin clear {
+@mixin reset-list {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
-/* Clear list
+/* No outline
 ******************************/
-@mixin clear-list {
-  @include clear;
-  list-style: none;
+@mixin no-outline {
+  outline: none;
+  background: transparent;
+
+  &::before {
+    display: none;
+  }
 }
 
 /* Circle
@@ -98,7 +85,7 @@
 
 /* Centering flex element
 ******************************/
-@mixin flex-center() {
+@mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -171,27 +158,55 @@
 /* Media queries
 ******************************/
 @mixin xl {
-  @media screen and (max-width: #{$screen-xl - 1px}) {
+  @media screen and (min-width: #{$screen-xl}) {
     @content;
   }
 } // Extra large devices
 @mixin lg {
-  @media screen and (max-width: #{$screen-lg - 1px}) {
+  @media screen and (min-width: #{$screen-lg}) {
     @content;
   }
 } // Large devices
 @mixin md {
-  @media screen and (max-width: #{$screen-md - 1px}) {
+  @media screen and (min-width: #{$screen-md}) {
     @content;
   }
 } // Medium devices
 @mixin sm {
-  @media screen and (max-width: #{$screen-sm - 1px}) {
+  @media screen and (min-width: #{$screen-sm}) {
     @content;
   }
 } // Small devices
 @mixin xs {
-  @media screen and (max-width: #{$screen-xs - 1px}) {
+  @media screen and (min-width: #{$screen-xs}) {
     @content;
   }
 } // Tiny devices
+
+/* Container with media queries
+******************************/
+@mixin container($screen: xs) {
+  margin: 0 auto;
+
+  @if $screen == xl {
+    padding-left: $padding-xl;
+    padding-right: $padding-xl;
+    width: $screen-xl;
+  } @else if $screen == lg {
+    padding-left: $padding-lg;
+    padding-right: $padding-lg;
+    width: $screen-lg;
+  } @else if $screen == md {
+    padding-left: $padding-md;
+    padding-right: $padding-md;
+    width: $screen-md;
+  } @else if $screen == sm {
+    padding-left: $padding-sm;
+    padding-right: $padding-sm;
+    width: $screen-sm;
+  } @else if $screen == xs {
+    padding-left: $padding-xs;
+    padding-right: $padding-xs;
+    width: $screen-xs;
+  }
+}

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Мишка: форма заказа</title>
-  <!--  <link rel="stylesheet" href="css/style.min.css">-->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!-- / ========= page-header ========= \ -->
@@ -13,65 +13,71 @@
     <div class="page-header__inner">
       <!-- / ========= main-nav ========= \ -->
       <nav class="main-nav">
-        <button class="main-nav__toggle" type="button">
-          <span class="main-nav__toggle-icon"></span>
-          <span class="main-nav__toggle-text visually-hidden">Открыть меню</span>
-        </button>
-        <div class="main-nav__inner">
+        <div class="main-nav__heading">
+          <!-- / ========= burger ========= \ -->
+          <button class="main-nav__toggle burger" type="button">
+            <span></span>
+            <b class="visually-hidden">Открыть меню</b>
+          </button>
+          <!-- \ ========= burger ========= / -->
           <!-- / ========= logo ========= \ -->
           <div class="page-header__logo logo">
-            <a class="logo__link">
-              <img class="logo__img" src="http://placehold.it/86x35" width="86" height="35"
-                   alt="Логотип магазина Мишка">
+            <a class="logo__link" href="index.html">
+              <img class="logo__img" src="./img/logo-mobile.svg" width="86" height="35" alt="Логотип магазина Мишка">
               <span class="logo__text visually-hidden">Mishka</span>
             </a>
           </div>
           <!-- \ ========= logo ========= / -->
-          <!-- / ========= site-nav ========= \ -->
-          <ul class="main-nav__site-list site-nav">
-            <li class="site-nav__item">
-              <a class="site-nav__link" href="catalog.html">Каталог товаров</a>
-            </li>
-            <li class="site-nav__item">
-              <a class="site-nav__link" href="form.html">Вязание на заказ</a>
-            </li>
-          </ul>
-          <!-- \ ========= site-nav ========= / -->
-          <!-- / ========= optional-nav ========= \ -->
-          <ul class="main-nav__optional-list optional-nav">
-            <li class="optional-nav__item optional-nav__item--search">
-              <a class="optional-nav__link" href="#">
-                <span class="optional-nav__text">Поиск по сайту</span>
-              </a>
-            </li>
-            <li class="optional-nav__item optional-nav__item--cart">
-              <a class="optional-nav__link" href="#">
-                <span class="optional-nav__text">Корзина: пока пуста</span>
-              </a>
-            </li>
-          </ul>
-          <!-- \ ========= optional-nav ========= / -->
-          <!-- / ========= store-nav ========= \ -->
-          <ul class="main-nav__store-list store-nav">
-            <li class="store-nav__item">
-              <a class="store-nav__link" href="#">Новые поступления</a>
-            </li>
-            <li class="store-nav__item">
-              <a class="store-nav__link" href="#">Распродажа</a>
-            </li>
-          </ul>
-          <!-- \ ========= store-nav ========= / -->
-          <div class="main-nav__delivery">Бесплатная доставка по России</div>
         </div>
+        <!-- / ========= site-nav ========= \ -->
+        <ul class="main-nav__site-list site-nav">
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="catalog.html">Каталог товаров</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="form.html">Вязание на заказ</a>
+          </li>
+        </ul>
+        <!-- \ ========= site-nav ========= / -->
+        <!-- / ========= optional-nav ========= \ -->
+        <ul class="main-nav__optional-list optional-nav">
+          <li class="optional-nav__item optional-nav__item--search">
+            <a class="optional-nav__link" href="#">
+              <img class="optional-nav__icon" src="./img/icon-search.svg" width="18" height="18"
+                   alt="Поиск по сайту">
+              <span class="optional-nav__text">Поиск по сайту</span>
+            </a>
+          </li>
+          <li class="optional-nav__item optional-nav__item--cart">
+            <a class="optional-nav__link" href="#">
+              <img class="optional-nav__icon" src="./img/icon-cart.svg" width="20" height="19"
+                   alt="Корзина">
+              <span class="optional-nav__text">Корзина: пока пуста</span>
+            </a>
+          </li>
+        </ul>
+        <!-- \ ========= optional-nav ========= / -->
+        <!-- / ========= store-nav ========= \ -->
+        <ul class="main-nav__store-list store-nav">
+          <li class="store-nav__item">
+            <a class="store-nav__link" href="#">Новые поступления</a>
+          </li>
+          <li class="store-nav__item">
+            <a class="store-nav__link" href="#">Распродажа</a>
+          </li>
+        </ul>
+        <!-- \ ========= store-nav ========= / -->
+        <div class="main-nav__delivery">Бесплатная доставка по России</div>
       </nav>
-      <!-- \ ========= main-nav ========= / --></div>
+      <!-- \ ========= main-nav ========= / -->
+    </div>
   </header>
   <!-- \ ========= page-header ========= / -->
 
   <!-- / ========= page-main ========= \ -->
   <main class="page-main">
     <div class="page-main__heading">
-      <h1 class="page-main__title">Вязание на заказ</h1>
+      <h1 class="page-main__title section-title">Вязание на заказ</h1>
     </div>
 
     <div class="page-main__content">
@@ -79,18 +85,19 @@
         <p>Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы
           уточнить детали.</p>
       </div>
-      <form class="page-main__form order-form" action="#">
+      <form class="order-form" action="#">
         <fieldset class="order-form__fieldset order-form__fieldset--type">
           <legend class="order-form__legend">Тип</legend>
           <div class="order-form__field-list order-form__field-list--type">
             <div class="order-form__field">
-              <input class="visually-hidden" type="radio" name="type" id="type-accessory" value="accessory" checked>
+              <input class="order-form__input visually-hidden" type="radio" name="type" id="type-accessory"
+                     value="accessory" checked>
               <label class="order-form__label order-form__label--type" for="type-accessory">Аксессуар для
                 интерьера</label>
             </div>
             <div class="order-form__field">
-              <input class="visually-hidden" type="radio" name="type" id="type-toy" value="toy">
-              <label class="order-form__label order-form__label--type" for="type-toy">Аксессуар для интерьера</label>
+              <input class="order-form__input visually-hidden" type="radio" name="type" id="type-toy" value="toy">
+              <label class="order-form__label order-form__label--type" for="type-toy">Детская игрушка</label>
             </div>
           </div>
         </fieldset>
@@ -99,27 +106,33 @@
           <legend class="order-form__legend">Цвет</legend>
           <div class="order-form__field-list order-form__field-list--color">
             <div class="order-form__field">
-              <input class="visually-hidden" type="checkbox" name="color" id="color-white" value="white" checked>
+              <input class="order-form__input visually-hidden" type="checkbox" name="color" id="color-white"
+                     value="white" checked>
               <label class="order-form__label order-form__label--color" for="color-white">Белый</label>
             </div>
             <div class="order-form__field">
-              <input class="visually-hidden" type="checkbox" name="color" id="color-gray" value="gray" checked>
-              <label class="order-form__label order-form__label--color" for="color-gray">Белый</label>
+              <input class="order-form__input visually-hidden" type="checkbox" name="color" id="color-gray"
+                     value="gray" checked>
+              <label class="order-form__label order-form__label--color" for="color-gray">Серый</label>
             </div>
             <div class="order-form__field">
-              <input class="visually-hidden" type="checkbox" name="color" id="color-tiffany" value="tiffany">
+              <input class="order-form__input visually-hidden" type="checkbox" name="color" id="color-tiffany"
+                     value="tiffany">
               <label class="order-form__label order-form__label--color" for="color-tiffany">«Тиффани»</label>
             </div>
             <div class="order-form__field">
-              <input class="visually-hidden" type="checkbox" name="color" id="color-black" value="black">
+              <input class="order-form__input visually-hidden" type="checkbox" name="color" id="color-black"
+                     value="black">
               <label class="order-form__label order-form__label--color" for="color-black">Черный</label>
             </div>
             <div class="order-form__field">
-              <input class="visually-hidden" type="checkbox" name="color" id="color-pink" value="pink">
+              <input class="order-form__input visually-hidden" type="checkbox" name="color" id="color-pink"
+                     value="pink">
               <label class="order-form__label order-form__label--color" for="color-pink">Розовый</label>
             </div>
             <div class="order-form__field">
-              <input class="visually-hidden" type="checkbox" name="color" id="color-orange" value="orange">
+              <input class="order-form__input visually-hidden" type="checkbox" name="color" id="color-orange"
+                     value="orange">
               <label class="order-form__label order-form__label--color" for="color-orange">Оранжевый</label>
             </div>
           </div>
@@ -153,20 +166,20 @@
               <input class="order-form__input order-form__input--phone" type="tel" name="phone" id="phone"
                      placeholder="+7 ХХХ ХХ ХХ*">
               <label class="order-form__label order-form__label--phone" for="phone">
-
+                <img class="order-form__icon" src="./img/icon-phone.svg" width="25" height="24" alt="Phone">
               </label>
             </div>
           </div>
         </fieldset>
 
         <fieldset class="order-form__fieldset order-form__fieldset--email">
-          <legend class="order-form__legend">Тел</legend>
+          <legend class="order-form__legend">E-mail</legend>
           <div class="order-form__field-list order-form__field-list--email">
             <div class="order-form__field">
               <input class="order-form__input order-form__input--email" type="email" name="email" id="email"
                      placeholder="Ваш Email*">
-              <label class="order-form__label order-form__label--email" for="email">
-
+              <label class="order-form__label order-form__label--phone" for="phone">
+                <img class="order-form__icon" src="./img/icon-mail.svg" width="32" height="32" alt="Phone">
               </label>
             </div>
           </div>
@@ -176,8 +189,8 @@
           <legend class="order-form__legend">Доп</legend>
           <div class="order-form__field-list order-form__field-list--message">
             <div class="order-form__field">
-                  <textarea class="order-form__message" name="message" id="message"
-                            placeholder="Опишите все ваши пожелания к заказу"></textarea>
+              <textarea class="order-form__message" name="message" id="message"
+                        placeholder="Опишите все ваши пожелания к заказу"></textarea>
             </div>
             <div class="order-form__field">
               <div class="order-form__notification">*Поля обязательны для заполнения</div>
@@ -195,8 +208,8 @@
     <div class="page-footer__inner">
       <!-- / ========= logo ========= \ -->
       <div class="page-footer__logo logo">
-        <a class="logo__link">
-          <img class="logo__img" src="http://placehold.it/102x34" width="102" height="34"
+        <a class="logo__link" href="index.html">
+          <img class="logo__img" src="./img/logo-footer.svg" width="102" height="34"
                alt="Логотип магазина Мишка">
           <span class="logo__text visually-hidden">Mishka</span>
         </a>
@@ -207,16 +220,19 @@
         <ul class="socials__list">
           <li class="socials__item socials__item--instagram">
             <a class="socials__link" href="http://instagram.com" target="_blank">
+              <img class="socials__icon" src="./img/icon-insta.svg" width="22" height="21" alt="Instagram">
               <span class="socials__text visually-hidden">Мы в Инстаграме</span>
             </a>
           </li>
           <li class="socials__item socials__item--facebook">
             <a class="socials__link" href="http://facebook.com" target="_blank">
+              <img class="socials__icon" src="./img/icon-fb.svg" width="15" height="28" alt="Facebook">
               <span class="socials__text visually-hidden">Мы в Фейсбуке</span>
             </a>
           </li>
           <li class="socials__item socials__item--twitter">
             <a class="socials__link" href="http://twitter.com" target="_blank">
+              <img class="socials__icon" src="./img/icon-twitter.svg" width="23" height="20" alt="Twitter">
               <span class="socials__text visually-hidden">Мы в Твиттере</span>
             </a>
           </li>
@@ -225,9 +241,11 @@
       <!-- \ ========= socials ========= / -->
       <!-- / ========= copyright ========= \ -->
       <div class="page-footer__copyright copyright">
-        <span class="copyright__text">Разработано</span>
-        <img class="copyright__img" src="http://placehold.it/27x34" width="27" height="34"
-             alt="Логотип HTML Academy">
+        <a class="copyright__link" href="#">
+          <span class="copyright__text">Разработано</span>
+          <img class="copyright__img" src="./img/logo-htmlacademy.svg" width="27" height="34"
+               alt="Логотип HTML Academy">
+        </a>
       </div>
       <!-- \ ========= copyright ========= / -->
     </div>

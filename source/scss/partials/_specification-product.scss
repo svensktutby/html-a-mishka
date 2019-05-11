@@ -1,0 +1,26 @@
+/* specification-product
+============================== */
+.specification-product {
+  border-collapse: collapse;
+}
+
+.specification-product__item {
+  border-bottom: 1px solid $border-color;
+}
+
+.specification-product__data {
+  padding: 10px 0;
+
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.333333;
+  color: $text-color;
+
+  &--property {
+    width: 35%;
+  }
+
+  &--value {
+    width: 65%;
+  }
+}

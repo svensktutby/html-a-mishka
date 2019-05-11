@@ -1,0 +1,45 @@
+/* store-nav
+============================== */
+.store-nav {
+  @include reset-list;
+
+  display: none;
+
+  @include xl {
+    position: absolute;
+    display: flex;
+    left: 0;
+    bottom: -50px;
+  }
+}
+
+.store-nav__item {
+  @include md {
+    margin-left: 60px;
+  }
+
+  &:first-child {
+    @include xl {
+      margin-left: 0;
+    }
+  }
+}
+
+.store-nav__link {
+  font-weight: 700;
+  font-size: 15px;
+  color: $link-color;
+  text-decoration: none;
+
+  transition: color $transition-time;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $link-color--hover;
+  }
+
+  &:active {
+    color: $link-color--active;
+  }
+}

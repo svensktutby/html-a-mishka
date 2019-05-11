@@ -1,0 +1,53 @@
+/* main-nav
+============================== */
+.main-nav {
+  @include md {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &::after {
+    @include pseudo();
+    @include md {
+      display: none;
+    }
+
+    right: 0;
+    left: 0;
+    height: 1px;
+    min-width: 320px;
+
+    background-color: $border-color;
+  }
+}
+
+.main-nav__heading {
+  @include xl {
+    order: 2;
+  }
+
+  position: relative;
+}
+
+.main-nav__toggle {
+  @include md {
+    display: none;
+  }
+  @include absol-center(false, true);
+
+  right: 0;
+}
+
+.main-nav__delivery {
+  @include md {
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+
+    display: block;
+  }
+
+  display: none;
+}
