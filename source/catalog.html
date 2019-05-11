@@ -22,7 +22,7 @@
           <!-- \ ========= burger ========= / -->
           <!-- / ========= logo ========= \ -->
           <div class="page-header__logo logo">
-            <a class="logo__link">
+            <a class="logo__link" href="index.html">
               <img class="logo__img" src="./img/logo-mobile.svg" width="86" height="35" alt="Логотип магазина Мишка">
               <span class="logo__text visually-hidden">Mishka</span>
             </a>
@@ -85,7 +85,7 @@
         <h2 class="visually-hidden">Наши товары</h2>
 
         <ul class="catalog__list">
-          <li class="catalog__item product">
+          <li class="catalog__item product" tabindex="0">
             <div class="product__picture">
               <a class="product__picture-link" href="#">
                 <img class="product__image" src="./img/photo-hare-mobile@1x.jpg" width="260" height="195"
@@ -109,7 +109,7 @@
             </div>
           </li>
 
-          <li class="catalog__item product">
+          <li class="catalog__item product" tabindex="0">
             <div class="product__picture">
               <a class="product__picture-link" href="#">
                 <img class="product__image" src="./img/photo-bowl-mobile@1x.jpg" width="260" height="195"
@@ -133,7 +133,7 @@
             </div>
           </li>
 
-          <li class="catalog__item product">
+          <li class="catalog__item product" tabindex="0">
             <div class="product__picture">
               <a class="product__picture-link" href="#">
                 <img class="product__image" src="./img/photo-toys-mobile@1x.jpg" width="260" height="195"
@@ -163,18 +163,30 @@
     <!-- / ========= production ========= \ -->
     <section class="production">
       <div class="production__inner">
-        <div class="production__heading">
-          <h2 class="production__title">Процесс производства</h2>
-        </div>
-        <div class="production__video">
-          <img class="production__image" src="http://placehold.it/260x150" width="260" height="150"
-               alt="Видео процесса производства">
-        </div>
-        <div class="production__description">
-          <p>По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.</p>
-        </div>
-        <div class="production__purchase">
-          <a class="production__order-button button" href="#">Сделать заказ</a>
+        <div class="production__content" tabindex="0">
+          <div class="production__heading">
+            <h2 class="production__title">Процесс производства</h2>
+          </div>
+          <div class="production__video">
+            <div class="production__picture">
+              <img class="production__image" src="./img/video-mobile@1x.jpg" width="260" height="150"
+                   alt="Видео процесса производства">
+            </div>
+            <a class="production__play-button" href="#">
+              <img class="production__play-icon" src="./img/icon-play.svg" width="101" height="77"
+                   alt="Кнопка проигрывания">
+              <span class="visually-hidden">Начать воспроизведение</span>
+            </a>
+          </div>
+          <div class="production__bottom">
+            <div class="production__description">
+              <p>По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши
+                товары.</p>
+            </div>
+            <div class="production__purchase">
+              <a class="production__order-button button" href="#">Сделать заказ</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -187,7 +199,7 @@
     <div class="page-footer__inner">
       <!-- / ========= logo ========= \ -->
       <div class="page-footer__logo logo">
-        <a class="logo__link">
+        <a class="logo__link" href="index.html">
           <img class="logo__img" src="./img/logo-footer.svg" width="102" height="34"
                alt="Логотип магазина Мишка">
           <span class="logo__text visually-hidden">Mishka</span>
@@ -231,7 +243,6 @@
   </footer>
   <!-- \ ========= page-footer ========= / -->
 
-  <!-- / ========= modal ========= \ -->
   <!-- / ========= modal ========= \ -->
   <div class="modal-overlay">
     <div class="modal-cart">

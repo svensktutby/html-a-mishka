@@ -10,6 +10,12 @@
     width: 30%;
   }
   margin-bottom: 30px;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    box-shadow: 0 6px 10px rgba(#000, 0.1);
+  }
 }
 
 .product__picture,
@@ -27,7 +33,7 @@
 }
 
 .product__image {
-  @include img();
+  @include img(100%);
   margin: 0 auto;
 }
 

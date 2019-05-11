@@ -11,6 +11,9 @@
   @include md {
     @include container(md);
   }
+  @include xl {
+    position: relative;
+  }
 }
 
 .week-product__heading {
@@ -18,7 +21,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    //width: 668px;
   }
   @include xl {
     flex-direction: row-reverse;
@@ -27,12 +29,18 @@
   }
 }
 
+.week-product__title {
+  @include xl {
+    position: relative;
+    z-index: 1;
+  }
+}
+
 .week-product__mark {
   @include inline-block();
   @include md {
     width: 80px;
   }
-
   @include xl {
     margin-right: 60px;
   }
@@ -46,16 +54,15 @@
 
 .week-product__info {
   @include md {
-    display: flex;
-    flex-wrap: wrap;
+    position: relative;
+  }
+  @include xl {
+    position: static;
   }
 }
 
 .week-product__description {
-  @include md {
-    width: 292px;
-    order: 1;
-  }
+  width: 260px;
   p {
     font-weight: 400;
     font-size: 15px;
@@ -65,17 +72,15 @@
 }
 
 .week-product__specification {
-  @include md {
-    width: 292px;
-    order: 2;
-  }
+  width: 260px;
   min-width: 260px;
 }
 
 .week-product__picture {
   @include md {
-    width: 334px;
-    order: 4;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 
   width: 260px;
@@ -88,10 +93,7 @@
 }
 
 .week-product__purchase {
-  @include md {
-    width: 292px;
-    order: 3;
-  }
+  width: 260px;
 }
 
 .week-product__price {
