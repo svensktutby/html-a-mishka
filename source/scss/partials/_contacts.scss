@@ -1,10 +1,11 @@
 /* contacts
 ============================== */
 .contacts {
-  padding: 30px 0;
+  padding: 40px 0;
 }
 
 .contacts__title {
+  @include container(xs);
   @include md {
     width: initial;
 
@@ -16,16 +17,17 @@
     line-height: 1.0754716981;
   }
 
-  width: 260px;
-  margin: 0 auto 30px;
+  margin-bottom: 14px;
 
+  font-weight: 700;
   font-size: 18px;
   line-height: 1.6666666667;
 }
 
 .contacts__list {
-  width: 260px;
-  margin: 0 auto 30px;
+  @include container(xs);
+  display: block;
+  margin-bottom: 25px;
 
   border-collapse: collapse;
 }
@@ -38,6 +40,12 @@
   line-height: 2;
   vertical-align: top;
   color: $text-color;
+
+  &--type,
+  &--value {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
 
   &--type {
     width: 30%;
@@ -53,12 +61,14 @@
 
   color: $text-color;
   text-decoration: none;
+
   transition: color $transition-time;
 
   &:hover,
   &:focus {
-    outline: none;
     color: $dark-teal;
+
+    outline: none;
   }
 
   &:active {
@@ -78,13 +88,14 @@
     height: 1px;
 
     background-color: $dark-teal;
+
     transition: background-color $transition-time;
   }
 }
 
 .contacts__map {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 38px;
 }
 
 .contacts__img {

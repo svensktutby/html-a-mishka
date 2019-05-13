@@ -21,6 +21,19 @@
 
     background-color: $border-color;
   }
+
+  &--nojs {
+    .main-nav__toggle {
+      display: none;
+    }
+    .main-nav__site-list,
+    .main-nav__optional-list{
+      @include md {
+        display: flex;
+      }
+      display: block;
+    }
+  }
 }
 
 .main-nav__heading {
@@ -37,7 +50,43 @@
   }
   @include absol-center(false, true);
 
-  right: 0;
+  right: -10px;
+}
+
+.main-nav__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80px;
+}
+
+.main-nav__site-list {
+  @include md {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+
+    display: flex;
+  }
+  @include xl {
+    position: static;
+    bottom: initial;
+    left: initial;
+
+    order: 1;
+  }
+  display: none;
+}
+
+.main-nav__optional-list {
+  @include md {
+    display: flex;
+    align-items: center;
+  }
+  @include xl {
+    order: 3;
+  }
+  display: none;
 }
 
 .main-nav__delivery {

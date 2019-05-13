@@ -210,3 +210,72 @@
     width: $screen-xs;
   }
 }
+
+/* Wavy border
+******************************/
+@mixin wavy-border {
+  &::before,
+  &::after {
+    @include md {
+      height: 9px;
+    }
+
+    @include xl {
+      height: 12px;
+      @include container(xl);
+    }
+
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+
+    height: 4px;
+
+    background-repeat: repeat-x;
+  }
+
+  &::before {
+    @include md {
+      background-image: radial-gradient(18px, transparent, transparent 10px, $border-color 11px, $border-color 16px, transparent 17px);
+      background-position-x: -20px;
+      background-size: 40px 36px;
+    }
+
+    @include xl {
+      background-image: radial-gradient(24px, transparent, transparent 13px, $border-color 14px, $border-color 21px, transparent 22px);
+      background-position-x: -27px;
+      background-size: 54px 43px;
+    }
+
+    bottom: 0;
+
+    background-image: radial-gradient(8px, transparent, transparent 3px, $border-color 4px, $border-color 5px, transparent 6px);
+    background-position-x: -8px;
+    background-size: 16px 12px;
+  }
+
+  &::after {
+    @include md {
+      bottom: -9px;
+
+      background-image: radial-gradient(18px, transparent, transparent 10px, $border-color 11px, $border-color 16px, transparent 17px);
+      background-position-y: -26px;
+      background-size: 40px 36px;
+    }
+
+    @include xl {
+      bottom: -12px;
+
+      background-image: radial-gradient(24px, transparent, transparent 13px, $border-color 14px, $border-color 21px, transparent 22px);
+      background-position-y: -33px;
+      background-size: 54px 43px;
+    }
+
+    bottom: -4px;
+
+    background-image: radial-gradient(8px, transparent, transparent 3px, $border-color 4px, $border-color 5px, transparent 6px);
+    background-position-y: -10px;
+    background-size: 16px 16px;
+  }
+}

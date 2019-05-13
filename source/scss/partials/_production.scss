@@ -78,11 +78,10 @@
     font-size: 20px;
     line-height: 1.2;
   }
-
   @include xl {
+    max-width: 160px;
     padding-top: 20px;
     padding-left: 0;
-    max-width: 160px;
   }
 
   max-width: 130px;
@@ -115,6 +114,7 @@
 
 .production__play-button {
   @include absol-center();
+
   display: block;
 }
 
@@ -132,6 +132,10 @@
 }
 
 .production__description {
+  @include md {
+    font-size: 15px;
+  }
+
   padding-bottom: 10px;
 
   font-size: 13px;

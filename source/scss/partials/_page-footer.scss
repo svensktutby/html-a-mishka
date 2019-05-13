@@ -1,6 +1,14 @@
 /* page-footer
 ============================== */
 .page-footer {
+  @include md {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  padding-top: 23px;
+  padding-bottom: 23px;
+
   background-color: $light-grey;
 }
 
@@ -18,9 +26,6 @@
   @include xl {
     @include container(xl);
   }
-
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .page-footer__logo {
@@ -40,7 +45,7 @@
 
   max-width: 140px;
   margin: 0 auto;
-  padding: 0 0 20px;
+  padding: 0 0 23px;
 }
 
 .page-footer__copyright {

@@ -2,20 +2,6 @@
 ============================== */
 .site-nav {
   @include reset-list;
-  @include md {
-    position: absolute;
-    bottom: -50px;
-    left: 0;
-
-    display: flex;
-  }
-  @include xl {
-    position: static;
-    bottom: initial;
-    left: initial;
-
-    order: 1;
-  }
 }
 
 .site-nav__item {

@@ -1,7 +1,11 @@
 /* reviews
 ============================== */
 .reviews {
-  padding: 30px 0;
+  @include wavy-border;
+
+  position: relative;
+
+  padding: 30px 0 45px;
 }
 
 .reviews__inner {
@@ -14,10 +18,16 @@
   }
 }
 
+.reviews__title {
+  margin-bottom: 22px;
+}
+
 .reviews__item {
-  margin: 0;
+  margin: 0 0 30px 0;
 
   p {
+    margin-top: 0;
+    margin-bottom: 10px;
     font-weight: 400;
     font-size: 15px;
     line-height: 2;
@@ -26,7 +36,7 @@
 }
 
 .reviews__author {
-  margin-bottom: 35px;
+  padding-top: 18px;
 }
 
 .reviews__author-name {
@@ -50,14 +60,14 @@
 
 .reviews__navigation {
   display: flex;
-  margin-bottom: 35px;
+  margin-bottom: 38px;
 }
 
 .reviews__arrow {
   position: relative;
 
   width: 50%;
-  height: 50px;
+  height: 52px;
   padding: 0;
 
   border: 1px solid $border-color;

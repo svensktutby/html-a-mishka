@@ -2,13 +2,6 @@
 ============================== */
 .optional-nav {
   @include reset-list;
-  @include md {
-    display: flex;
-    align-items: center;
-  }
-  @include xl {
-    order: 3;
-  }
 }
 
 .optional-nav__item {
@@ -34,7 +27,7 @@
   &--search {
     .optional-nav__text {
       @include md {
-        display: none;
+        font-size: 0;
       }
     }
   }

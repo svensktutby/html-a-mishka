@@ -1,7 +1,9 @@
 /* week-product
 ============================== */
 .week-product {
-  padding: 30px 0;
+  @include wavy-border;
+  position: relative;
+  padding: 30px 0 40px;
 
   background-color: #fff;
 }
@@ -74,6 +76,7 @@
 .week-product__specification {
   width: 260px;
   min-width: 260px;
+  margin-bottom: 30px;
 }
 
 .week-product__picture {
