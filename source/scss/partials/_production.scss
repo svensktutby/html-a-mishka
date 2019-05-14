@@ -6,26 +6,29 @@
 
 .production__inner {
   @include container(xs);
+
   @include md {
     @include container(md);
   }
+
   @include xl {
     @include container(xl);
   }
 }
 
 .production__content {
+  border: 1px solid $border-color;
+
   @include md {
     display: flex;
     flex-direction: column;
   }
+
   @include xl {
     position: relative;
 
     min-height: 455px;
   }
-
-  border: 1px solid $border-color;
 
   &:hover,
   &:focus {
@@ -35,6 +38,11 @@
 }
 
 .production__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+
   @include md {
     justify-content: flex-start;
     order: 2;
@@ -43,6 +51,7 @@
 
     border-top: 1px solid $border-color;
   }
+
   @include xl {
     display: block;
     margin-left: 683px;
@@ -51,11 +60,6 @@
 
     border-top: none;
   }
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px;
 
   &::before {
     content: "";
@@ -71,19 +75,6 @@
 }
 
 .production__title {
-  @include md {
-    max-width: initial;
-    padding-left: 35px;
-
-    font-size: 20px;
-    line-height: 1.2;
-  }
-  @include xl {
-    max-width: 160px;
-    padding-top: 20px;
-    padding-left: 0;
-  }
-
   max-width: 130px;
   margin: 0;
 
@@ -91,12 +82,29 @@
   font-size: 17px;
   line-height: 1.4117647059;
   color: $text-color-dark;
+
+  @include md {
+    max-width: initial;
+    padding-left: 35px;
+
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  @include xl {
+    max-width: 160px;
+    padding-top: 20px;
+    padding-left: 0;
+  }
 }
 
 .production__video {
+  position: relative;
+
   @include md {
     order: 1;
   }
+
   @include xl {
     position: absolute;
     top: 0;
@@ -104,8 +112,6 @@
 
     width: 683px;
   }
-
-  position: relative;
 }
 
 .production__image {
@@ -119,28 +125,29 @@
 }
 
 .production__bottom {
+  padding: 25px;
+
   @include md {
     order: 3;
   }
+
   @include xl {
     margin-left: 683px;
     padding-right: 50px;
     padding-left: 50px;
   }
-
-  padding: 25px;
 }
 
 .production__description {
-  @include md {
-    font-size: 15px;
-  }
-
   padding-bottom: 10px;
 
   font-size: 13px;
   line-height: 1.8461538462;
   color: $text-color;
+
+  @include md {
+    font-size: 15px;
+  }
 
   p {
     margin: 0 0 10px 0;

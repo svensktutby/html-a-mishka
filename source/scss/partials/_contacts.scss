@@ -1,35 +1,81 @@
 /* contacts
 ============================== */
 .contacts {
-  padding: 40px 0;
+  padding: 55px 0;
 }
 
 .contacts__title {
   @include container(xs);
-  @include md {
-    width: initial;
-
-    font-size: 43px;
-    line-height: 1.1627906977;
-  }
-  @include xl {
-    font-size: 53px;
-    line-height: 1.0754716981;
-  }
 
   margin-bottom: 14px;
 
   font-weight: 700;
   font-size: 18px;
   line-height: 1.6666666667;
+
+  @include md {
+    @include container(md);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+    margin-bottom: 20px;
+
+    font-size: 43px;
+    line-height: 1.1627906977;
+  }
+
+  @include xl {
+    font-size: 53px;
+    line-height: 1.0754716981;
+  }
+
+  &::after {
+    content: "";
+
+    display: none;
+    width: 47px;
+    height: 82px;
+
+    background-image: url("../../img/icon-flag.svg");
+    background-repeat: no-repeat;
+
+    @include md {
+      display: block;
+    }
+  }
 }
 
 .contacts__list {
   @include container(xs);
+
   display: block;
   margin-bottom: 25px;
 
   border-collapse: collapse;
+
+  @include md {
+    @include container(md);
+
+    margin-bottom: 40px;
+  }
+
+  tbody {
+    @include md {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.contacts__item {
+  @include md {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 50%;
+  }
 }
 
 .contacts__data {
@@ -41,6 +87,11 @@
   vertical-align: top;
   color: $text-color;
 
+  @include md {
+    font-size: 17px;
+    line-height: 1.7647058824;
+  }
+
   &--type,
   &--value {
     padding-top: 14px;
@@ -49,10 +100,18 @@
 
   &--type {
     width: 30%;
+
+    @include md {
+      width: 24%;
+    }
   }
 
   &--value {
     width: 70%;
+
+    @include md {
+      width: 76%;
+    }
   }
 }
 
@@ -96,6 +155,10 @@
 .contacts__map {
   width: 100%;
   margin-bottom: 38px;
+
+  @include md {
+    margin-bottom: 55px;
+  }
 }
 
 .contacts__img {
@@ -107,4 +170,8 @@
 .contacts__button-wrapper {
   max-width: 260px;
   margin: 0 auto;
+
+  @include md {
+    max-width: 230px;
+  }
 }

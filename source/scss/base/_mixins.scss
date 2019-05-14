@@ -211,9 +211,9 @@
   }
 }
 
-/* Wavy border
+/* Wavy border grey
 ******************************/
-@mixin wavy-border {
+@mixin wavy-border-grey {
   &::before,
   &::after {
     @include md {
@@ -277,5 +277,53 @@
     background-image: radial-gradient(8px, transparent, transparent 3px, $border-color 4px, $border-color 5px, transparent 6px);
     background-position-y: -10px;
     background-size: 16px 16px;
+  }
+}
+
+/* Wavy border grey
+******************************/
+@mixin wavy-border-white {
+  @include md {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+
+      background-repeat: repeat-x;
+    }
+
+    &::before {
+      height: 10px;
+
+      background-image: radial-gradient(circle at 10px -5px, transparent 12px, $white 13px);
+      background-size: 20px 20px;
+    }
+
+    &::after {
+      height: 15px;
+
+      background-image: radial-gradient(circle at 10px 15px, $white 12px, transparent 13px);
+      background-size: 40px 20px;
+    }
+  }
+
+  @include xl {
+    &::before {
+      height: 10px;
+
+      background-image: radial-gradient(circle at 15px -10px,transparent 19px,#fff 20px);
+      background-size: 30px 20px;
+    }
+
+    &::after {
+      height: 15px;
+
+      background-image: radial-gradient(circle at 15px 20px,#fff 19px,transparent 20px);
+      background-size: 60px 20px;
+    }
   }
 }

@@ -8,17 +8,19 @@
 
 .order-form__fieldset {
   @include container(xs);
-  @include md {
-    @include container(md);
-  }
-  @include xl {
-    @include container(xl);
-  }
 
   padding-top: 10px;
   padding-bottom: 10px;
 
   border: none;
+
+  @include md {
+    @include container(md);
+  }
+
+  @include xl {
+    @include container(xl);
+  }
 }
 
 .order-form__legend {

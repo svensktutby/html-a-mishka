@@ -6,9 +6,11 @@
 
 .catalog__inner {
   @include container(xs);
+
   @include md {
     @include container(md);
   }
+
   @include xl {
     @include container(xl);
   }
@@ -16,9 +18,10 @@
 
 .catalog__list {
   @include reset-list;
+
   @include xl {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 }

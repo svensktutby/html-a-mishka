@@ -8,6 +8,7 @@
   @include md {
     margin-left: 35px;
   }
+
   @include xl {
     display: flex;
     align-items: center;
@@ -19,6 +20,7 @@
     @include md {
       margin-left: 0;
     }
+
     @include xl {
       border-left: none;
     }
@@ -31,9 +33,6 @@
   }
   &::before {
     @include pseudo();
-    @include md {
-      display: none;
-    }
 
     right: 0;
     left: 0;
@@ -42,19 +41,14 @@
     height: 1px;
 
     background-color: $border-color;
+
+    @include md {
+      display: none;
+    }
   }
 }
 
 .site-nav__link {
-  @include md {
-    min-height: auto;
-    padding-left: 0;
-  }
-  @include xl {
-    min-height: 80px;
-    padding-left: 35px;
-  }
-
   display: flex;
   align-items: center;
   min-height: 80px;
@@ -62,10 +56,27 @@
 
   font-weight: 700;
   font-size: 17px;
+  line-height: 1.4117647059;
   color: $link-color;
   text-decoration: none;
 
   transition: color $transition-time;
+
+  @include md {
+    min-height: auto;
+    padding-left: 0;
+
+    font-size: $fs-base;
+    line-height: $lh-base;
+  }
+
+  @include xl {
+    min-height: 80px;
+    padding-left: 35px;
+
+    font-size: 17px;
+    line-height: 1.4117647059;
+  }
 
   &:hover,
   &:focus {

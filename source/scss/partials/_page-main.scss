@@ -6,36 +6,40 @@
 
 .page-main__title {
   @include container(xs);
+
+  padding-top: 75px;
+  padding-bottom: 75px;
+
+  text-align: center;
+
   @include md {
     @include container(md);
 
     padding-top: 105px;
     padding-bottom: 105px;
   }
+
   @include xl {
     @include container(xl);
   }
-
-  padding-top: 75px;
-  padding-bottom: 75px;
-
-  text-align: center;
 }
 
 .page-main__lead {
   @include container(xs);
+
+  padding-top: 25px;
+  padding-bottom: 25px;
+
   @include md {
     @include container(md);
 
     padding-top: 80px;
     padding-bottom: 50px;
   }
+
   @include xl {
     @include container(xl);
   }
-
-  padding-top: 25px;
-  padding-bottom: 25px;
 
   p {
     font-size: 13px;

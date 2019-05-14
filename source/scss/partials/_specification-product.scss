@@ -18,9 +18,15 @@
 
   &--property {
     width: 38%;
+    @include md {
+      width: 32%;
+    }
   }
 
   &--value {
     width: 62%;
+    @include md {
+      width: 68%;
+    }
   }
 }

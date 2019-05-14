@@ -1,12 +1,12 @@
 /* modal-cart
 ============================== */
 .modal-overlay {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
 
+  display: none;
   width: 100%;
   height: 100%;
 
@@ -99,6 +99,7 @@
 
 .modal-cart__button {
   width: 100%;
+
   color: $white;
 
   background-color: $light-teal;

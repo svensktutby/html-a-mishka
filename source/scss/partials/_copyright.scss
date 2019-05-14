@@ -1,9 +1,6 @@
 /* copyright
 ============================== */
 .copyright__link {
-  @include md {
-    justify-content: flex-end;
-  }
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,17 +8,23 @@
   color: $link-color;
   text-decoration: none;
 
+  @include md {
+    justify-content: flex-end;
+  }
+
   &:active {
     color: $link-color--active;
   }
 }
 
 .copyright__text {
-  @include md {
-    padding-right: 30px;
-  }
   @include inline-block();
+
   font-weight: 700;
   font-size: 18px;
   line-height: 1;
+
+  @include md {
+    padding-right: 30px;
+  }
 }

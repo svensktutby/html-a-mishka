@@ -10,16 +10,18 @@
 
   &::after {
     @include pseudo();
-    @include md {
-      display: none;
-    }
 
     right: 0;
     left: 0;
-    height: 1px;
+
     min-width: 320px;
+    height: 1px;
 
     background-color: $border-color;
+
+    @include md {
+      display: none;
+    }
   }
 
   &--nojs {
@@ -27,47 +29,53 @@
       display: none;
     }
     .main-nav__site-list,
-    .main-nav__optional-list{
+    .main-nav__optional-list {
+      display: block;
+
       @include md {
         display: flex;
       }
-      display: block;
     }
   }
 }
 
 .main-nav__heading {
+  position: relative;
+
   @include xl {
     order: 2;
   }
-
-  position: relative;
 }
 
 .main-nav__toggle {
-  @include md {
-    display: none;
-  }
   @include absol-center(false, true);
 
   right: -10px;
+
+  @include md {
+    display: none;
+  }
 }
 
 .main-nav__logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80px;
+  min-height: 87px;
 }
 
 .main-nav__site-list {
+  display: none;
+
   @include md {
     position: absolute;
-    bottom: -50px;
+    bottom: -42px;
     left: 0;
+    z-index: 1;
 
     display: flex;
   }
+
   @include xl {
     position: static;
     bottom: initial;
@@ -75,28 +83,46 @@
 
     order: 1;
   }
-  display: none;
 }
 
 .main-nav__optional-list {
+  display: none;
+
   @include md {
     display: flex;
     align-items: center;
   }
+
   @include xl {
     order: 3;
   }
+}
+
+.main-nav__store-list {
   display: none;
+
+  @include xl {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    z-index: 1;
+
+    display: flex;
+  }
 }
 
 .main-nav__delivery {
+  display: none;
+
+  font-size: $fs-base;
+  line-height: $lh-base;
+
   @include md {
     position: absolute;
     right: 0;
-    bottom: -50px;
+    bottom: -42px;
+    z-index: 1;
 
     display: block;
   }
-
-  display: none;
 }
