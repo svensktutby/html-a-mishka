@@ -1,12 +1,46 @@
 /* contacts
 ============================== */
 .contacts {
-  padding: 55px 0;
+  padding: 35px 0;
+
+  @include md {
+    padding: 55px 0;
+  }
+
+  @include xl {
+    padding-top: 85px;
+  }
+}
+
+.contacts__inner {
+  @include xl {
+    @include container(xl);
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 500px;
+  }
+}
+
+.contacts__top {
+  @include container(xs);
+
+  @include md {
+    @include container(md);
+  }
+
+  @include xl {
+    order: 1;
+    width: 50%;
+    margin: 0;
+    padding-top: 55px;
+    padding-right: 0;
+    padding-left: 175px;
+  }
 }
 
 .contacts__title {
-  @include container(xs);
-
   margin-bottom: 14px;
 
   font-weight: 700;
@@ -14,8 +48,6 @@
   line-height: 1.6666666667;
 
   @include md {
-    @include container(md);
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,6 +59,11 @@
   }
 
   @include xl {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+    margin-left: -110px;
+
     font-size: 53px;
     line-height: 1.0754716981;
   }
@@ -44,27 +81,35 @@
     @include md {
       display: block;
     }
+
+    @include xl {
+      margin-right: 60px;
+    }
   }
 }
 
 .contacts__list {
-  @include container(xs);
-
   display: block;
   margin-bottom: 25px;
 
   border-collapse: collapse;
 
   @include md {
-    @include container(md);
-
     margin-bottom: 40px;
+  }
+
+  @include xl {
+    margin-bottom: 35px;
   }
 
   tbody {
     @include md {
       display: flex;
       justify-content: space-between;
+    }
+
+    @include xl {
+      display: initial;
     }
   }
 }
@@ -75,6 +120,10 @@
     justify-content: space-between;
     align-items: flex-start;
     width: 50%;
+  }
+
+  @include xl {
+    display: initial;
   }
 }
 
@@ -104,6 +153,10 @@
     @include md {
       width: 24%;
     }
+
+    @include xl {
+      width: 28%;
+    }
   }
 
   &--value {
@@ -111,6 +164,10 @@
 
     @include md {
       width: 76%;
+    }
+
+    @include xl {
+      width: 72%;
     }
   }
 }
@@ -159,6 +216,11 @@
   @include md {
     margin-bottom: 55px;
   }
+
+  @include xl {
+    order: 3;
+    width: 50%;
+  }
 }
 
 .contacts__img {
@@ -173,5 +235,11 @@
 
   @include md {
     max-width: 230px;
+  }
+
+  @include xl {
+    order: 2;
+    width: 50%;
+    margin-left: 175px;
   }
 }

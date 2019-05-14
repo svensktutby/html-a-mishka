@@ -13,6 +13,11 @@
     padding-top: 40px;
     padding-bottom: 60px;
   }
+
+  @include xl {
+    padding-top: 70px;
+    padding-bottom: 85px;
+  }
 }
 
 .week-product__inner {
@@ -23,11 +28,15 @@
   }
 
   @include xl {
+    @include container(xl);
+
     position: relative;
   }
 }
 
 .week-product__heading {
+  margin-bottom: 15px;
+
   @include md {
     display: flex;
     justify-content: space-between;
@@ -38,7 +47,8 @@
   @include xl {
     flex-direction: row-reverse;
     justify-content: flex-end;
-    margin-left: -143px;
+    padding-top: 50px;
+    padding-left: 43px;
   }
 }
 
@@ -66,7 +76,7 @@
   }
 
   @include xl {
-    margin-right: 60px;
+    margin-right: 50px;
   }
 }
 
@@ -77,6 +87,8 @@
 
   @include xl {
     position: static;
+
+    padding-left: 175px;
   }
 }
 
@@ -88,7 +100,14 @@
     margin-bottom: 35px;
   }
 
+  @include xl {
+    margin-bottom: 50px;
+  }
+
   p {
+    margin-top: 0;
+    margin-bottom: 10px;
+
     font-weight: 400;
     font-size: 15px;
     line-height: 1.6;
@@ -110,6 +129,10 @@
     width: 292px;
     margin-bottom: 55px;
   }
+  @include xl {
+    margin-bottom: 108px;
+  }
+
 }
 
 .week-product__picture {
@@ -119,6 +142,12 @@
     position: absolute;
     top: 0;
     right: 0;
+  }
+
+  @include xl {
+    position: absolute;
+    top: 0;
+    right: $padding-xl;
   }
 }
 

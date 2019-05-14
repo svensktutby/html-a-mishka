@@ -2,12 +2,18 @@
 ============================== */
 .reviews {
   @include wavy-border-grey;
+
+  position: relative;
+
   padding: 30px 0 45px;
 
   @include md {
     padding-top: 0;
     padding-bottom: 90px;
-    position: relative;
+  }
+
+  @include xl {
+    padding-bottom: 140px;
   }
 }
 
@@ -16,6 +22,7 @@
 
   @include md {
     @include container(md);
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -29,6 +36,8 @@
 
   @include xl {
     @include container(xl);
+
+    background-position: $padding-xl 0;
   }
 }
 
@@ -36,10 +45,11 @@
   margin-bottom: 22px;
 
   @include md {
-    order: 1;
     flex-basis: 450px;
+    order: 1;
     margin-bottom: 50px;
   }
+
   @include xl {
     padding-left: 175px;
   }
@@ -48,8 +58,10 @@
 .reviews__list {
   @include md {
     position: relative;
+
     order: 3;
   }
+
   @include xl {
     padding-left: 175px;
   }
@@ -57,6 +69,7 @@
 
 .reviews__item {
   margin: 0 0 30px 0;
+
   @include md {
     position: relative;
   }
@@ -82,6 +95,9 @@
 
   @include md {
     padding-top: 48px;
+  }
+  @include md {
+    padding-top: 28px;
   }
 }
 
@@ -111,10 +127,11 @@
 .reviews__navigation {
   display: flex;
   margin-bottom: 38px;
+
   @include md {
     position: absolute;
-    bottom: 0;
     right: 0;
+    bottom: 0;
   }
 }
 
@@ -128,8 +145,8 @@
 
   @include md {
     width: auto;
-    padding-left: 20px;
     padding-right: 20px;
+    padding-left: 20px;
 
     border: none;
   }
@@ -145,7 +162,11 @@
 
 .reviews__write-button {
   @include md {
-    order: 2;
     flex-basis: 176px;
+    order: 2;
+  }
+
+  @include xl {
+    margin-top: 8px;
   }
 }

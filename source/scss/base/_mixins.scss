@@ -222,7 +222,8 @@
 
     @include xl {
       height: 12px;
-      @include container(xl);
+      width: 1050px;
+      margin: 0 auto;
     }
 
     content: "";

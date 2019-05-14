@@ -2,9 +2,14 @@
 ============================== */
 .advantages {
   padding: 30px 0;
+
   @include md {
     padding-top: 60px;
     padding-bottom: 15px;
+  }
+
+  @include xl {
+    padding-top: 70px;
   }
 }
 
@@ -14,10 +19,17 @@
   @include md {
     @include container(md);
   }
+
+  @include xl {
+    @include container(xl);
+    padding-left: 225px;
+    padding-right: 225px;
+  }
 }
 
 .advantages__title {
   margin-bottom: 30px;
+
   @include md {
     margin-bottom: 50px;
   }
@@ -27,10 +39,10 @@
   @include reset-list;
 
   @include md {
-    max-height: 500px;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 500px;
   }
 }
 
@@ -40,6 +52,10 @@
   @include md {
     width: 50%;
     margin-bottom: 65px;
+  }
+
+  @include xl {
+    width: 30%;
   }
 
   &:last-child {
