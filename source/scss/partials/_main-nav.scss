@@ -50,7 +50,7 @@
 .main-nav__toggle {
   @include absol-center(false, true);
 
-  right: -10px;
+  right: -9px;
 
   @include md {
     display: none;
@@ -61,7 +61,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 87px;
+  min-height: 80px;
 }
 
 .main-nav__site-list {

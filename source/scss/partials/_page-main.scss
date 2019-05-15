@@ -1,48 +1,76 @@
 /* page-main
 ============================== */
 .page-main__heading {
+  padding-top: 73px;
+  padding-bottom: 73px;
+
   background-color: $light-grey;
+
+  @include md {
+    @include wavy-border-white;
+
+    position: relative;
+
+    padding-top: 95px;
+    padding-bottom: 80px;
+  }
+
+  @include xl {
+    padding-bottom: 100px;
+  }
 }
 
 .page-main__title {
   @include container(xs);
 
-  padding-top: 75px;
-  padding-bottom: 75px;
-
+  font-size: 27px;
+  line-height: 1.1111111111;
   text-align: center;
 
   @include md {
     @include container(md);
 
-    padding-top: 105px;
-    padding-bottom: 105px;
+    font-size: 43px;
+    line-height: 1.1627906977;
   }
 
   @include xl {
     @include container(xl);
+
+    font-size: 53px;
+    line-height: 1.0754716981;
   }
 }
 
 .page-main__lead {
   @include container(xs);
 
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 22px;
 
   @include md {
     @include container(md);
 
-    padding-top: 80px;
-    padding-bottom: 50px;
+    padding-top: 72px;
   }
 
   @include xl {
     @include container(xl);
+
+    padding-top: 125px;
+    padding-left: 225px;
+    padding-right: 205px;
   }
 
   p {
+    margin-top: 0;
+    margin-bottom: 10px;
+
     font-size: 13px;
     line-height: 1.8461538462;
+
+    @include md {
+      font-size: 17px;
+      line-height: 1.7647058824;
+    }
   }
 }
