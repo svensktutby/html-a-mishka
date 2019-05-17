@@ -6,11 +6,13 @@
   @include md {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 50px;
   }
 
   @include xl {
     flex-direction: column;
     width: 30%;
+    margin-bottom: 55px;
   }
 
   &:hover,
@@ -39,6 +41,14 @@
   @include img(100%);
 
   margin: 0 auto;
+
+  @include md {
+    min-height: 334px;
+  }
+
+  @include xl {
+    min-height: 465px;
+  }
 }
 
 .product__info {
@@ -46,21 +56,30 @@
 
   border: 1px solid $border-color;
 
-  @include xl {
+  @include md {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     justify-content: space-between;
+    padding-top: 20px;
   }
 }
 
 .product__description {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+
+  @include xl {
+    margin-bottom: 15px;
+  }
 }
 
 .product__title {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+
+  @include xl {
+    margin-bottom: 5px;
+  }
 }
 
 .product__link {

@@ -2,6 +2,13 @@
 ============================== */
 .catalog {
   padding-top: 30px;
+  @include md {
+    padding-top: 80px;
+  }
+
+  @include xl {
+    padding-top: 130px;
+  }
 }
 
 .catalog__inner {
