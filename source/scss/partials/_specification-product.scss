@@ -17,10 +17,16 @@
   color: $text-color;
 
   &--property {
-    width: 35%;
+    width: 38%;
+    @include md {
+      width: 32%;
+    }
   }
 
   &--value {
-    width: 65%;
+    width: 62%;
+    @include md {
+      width: 68%;
+    }
   }
 }

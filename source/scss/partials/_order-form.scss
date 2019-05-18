@@ -1,35 +1,113 @@
 /* order-form
 ============================== */
 .order-form {
-  padding-bottom: 40px;
+  padding-bottom: 55px;
 
   background-color: $white;
 }
 
 .order-form__fieldset {
-  @include container(xs);
-  @include md {
-    @include container(md);
-  }
-  @include xl {
-    @include container(xl);
-  }
-
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 
   border: none;
+
+  @include md {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  &--color,
+  &--phone,
+  &--email {
+    @include md {
+      background-color: $light-grey;
+    }
+  }
+
+  &--color {
+    .order-form__fieldset-inner {
+      @include xl {
+        padding-right: 155px;
+      }
+    }
+  }
+
+  &--phone,
+  &--email {
+    .order-form__legend {
+      margin-bottom: 0;
+
+      @include md {
+        align-self: center;
+      }
+    }
+  }
+
+  &--phone {
+    @include md {
+      padding-top: 45px;
+      padding-bottom: 10px;
+    }
+  }
+
+  &--email {
+    @include md {
+      padding-top: 10px;
+      padding-bottom: 45px;
+    }
+  }
+
+  &--message {
+    padding-bottom: 15px;
+
+    @include md {
+      margin-bottom: 40px;
+    }
+
+    @include xl {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.order-form__fieldset-inner {
+  @include container(xs);
+
+  @include md {
+    @include container(md);
+
+    display: flex;
+  }
+
+  @include xl {
+    @include container(xl);
+
+    padding-right: 225px;
+    padding-left: 115px;
+  }
 }
 
 .order-form__legend {
   position: relative;
 
   width: 100%;
+  margin-bottom: 20px;
 
   font-weight: 700;
   font-size: 17px;
   color: $light-teal;
   text-transform: uppercase;
+
+  @include md {
+    width: 25%;
+    margin-bottom: 0;
+    padding-top: 10px;
+  }
+
+  @include xl {
+    width: 14%;
+  }
 
   &::after {
     content: "";
@@ -43,16 +121,83 @@
 
     background-color: $light-teal;
     transform: translateY(-50%);
+
+    @include md {
+      display: none;
+    }
+  }
+}
+
+.order-form__field-list {
+  @include md {
+    width: 75%;
+  }
+
+  @include xl {
+    width: 86%;
+  }
+
+  &--color {
+    @include md {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .order-form__field {
+      @include md {
+        width: 50%;
+      }
+
+      @include xl {
+        width: 33.333%;
+      }
+
+      &:nth-child(5) {
+        @include md {
+          margin-bottom: 0;
+        }
+      }
+
+      &:nth-child(4),
+      &:nth-child(6) {
+        @include xl {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &--name {
+    .order-form__field {
+      @include md {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+    }
   }
 }
 
 .order-form__field {
   position: relative;
 
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+
+  @include md {
+    width: auto;
+    margin-bottom: 35px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .order-form__label {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.0588235294;
+  color: $text-color-dark;
+
   &--type,
   &--color {
     position: relative;
@@ -60,17 +205,15 @@
     display: flex;
     align-items: center;
     min-height: 40px;
-    margin-bottom: 20px;
     padding-left: 65px;
-
-    font-weight: 700;
-    font-size: 17px;
-    line-height: 1.0588235294;
-    color: $text-color-dark;
 
     cursor: pointer;
 
     user-select: none;
+
+    @include md {
+      padding-left: 80px;
+    }
 
     &::before {
       content: "";
@@ -85,6 +228,11 @@
       transform: translateY(-50%);
 
       transition: border-color $transition-time;
+
+      @include md {
+        width: 52px;
+        height: 52px;
+      }
     }
 
     &::after {
@@ -121,12 +269,19 @@
       background-color: $light-teal;
       border-radius: 50%;
       transform: translateY(-50%);
+
+      @include md {
+        left: 15px;
+
+        width: 22px;
+        height: 22px;
+      }
     }
   }
 
   &--color {
     &::after {
-      top: 13px;
+      top: 7px;
       left: 10px;
 
       display: none;
@@ -137,13 +292,24 @@
       border-bottom: 2px solid $text-color-dark;
       border-left: 2px solid $text-color-dark;
       transform: rotate(-45deg);
+
+      @include md {
+        left: 10px;
+
+        width: 30px;
+        height: 20px;
+      }
     }
   }
 
   &--name {
-    font-weight: 700;
-    font-size: 17px;
-    color: $text-color-dark;
+    display: block;
+    padding-top: 2px;
+
+    @include md {
+      margin-right: 30px;
+      padding-top: 15px;
+    }
   }
 
   &--phone,
@@ -181,7 +347,7 @@
   &--phone,
   &--email {
     width: 100%;
-    padding: 15px;
+    padding: 15px 0;
 
     font-size: 17px;
     color: $text-color;
@@ -190,6 +356,11 @@
     border-bottom: 2px solid $text-color-dark;
 
     transition: border-color $transition-time;
+
+    @include md {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
 
     &::placeholder {
       color: rgba($text-color, 0.3);
@@ -202,26 +373,24 @@
     }
   }
 
-  &--name {
-    margin-bottom: 20px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
   &--phone,
   &--email {
     padding-right: 40px;
+
+    @include md {
+      background-color: $light-grey;
+    }
   }
 }
 
 .order-form__message {
+  display: block;
   width: 100%;
   min-height: 140px;
   padding: 15px;
 
   font-size: 17px;
+  line-height: 1.0588235294;
   color: $text-color;
 
   border: 2px solid $text-color-dark;
@@ -229,6 +398,10 @@
   transition: border-color $transition-time;
 
   resize: none;
+
+  @include md {
+    font-size: 19px;
+  }
 
   &::placeholder {
     color: rgba($text-color, 0.3);
@@ -241,13 +414,44 @@
   }
 }
 
+.order-form__bottom {
+  @include container(xs);
+
+  @include md {
+    @include container(md);
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @include xl {
+    @include container(xl);
+
+    padding-right: 225px;
+    padding-left: 225px;
+  }
+}
+
 .order-form__notification {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 
   font-size: 14px;
   line-height: 1.1428571429;
+
+  @include md {
+    margin-bottom: 0;
+
+    font-size: 17px;
+    line-height: 1.7647058824;
+  }
 }
 
 .order-form__button {
   width: 100%;
+
+  @include md {
+    width: 230px;
+  }
 }

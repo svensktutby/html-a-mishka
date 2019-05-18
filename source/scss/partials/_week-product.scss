@@ -1,31 +1,54 @@
 /* week-product
 ============================== */
 .week-product {
-  padding: 30px 0;
+  @include wavy-border-grey;
+
+  position: relative;
+
+  padding: 30px 0 40px;
 
   background-color: #fff;
+
+  @include md {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  @include xl {
+    padding-top: 70px;
+    padding-bottom: 85px;
+  }
 }
 
 .week-product__inner {
   @include container(xs);
+
   @include md {
     @include container(md);
   }
+
   @include xl {
+    @include container(xl);
+
     position: relative;
   }
 }
 
 .week-product__heading {
+  margin-bottom: 15px;
+
   @include md {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 40px;
   }
+
   @include xl {
     flex-direction: row-reverse;
     justify-content: flex-end;
-    margin-left: -143px;
+    padding-top: 50px;
+    padding-left: 43px;
   }
 }
 
@@ -38,52 +61,94 @@
 
 .week-product__mark {
   @include inline-block();
-  @include md {
-    width: 80px;
-  }
-  @include xl {
-    margin-right: 60px;
-  }
 
   font-weight: 700;
   font-size: 17px;
   line-height: 1;
   color: $light-teal;
   text-transform: uppercase;
+
+  @include md {
+    width: 80px;
+    margin-right: 22px;
+
+    text-align: center;
+  }
+
+  @include xl {
+    margin-right: 50px;
+  }
 }
 
 .week-product__info {
   @include md {
     position: relative;
   }
+
   @include xl {
     position: static;
+
+    padding-left: 175px;
   }
 }
 
 .week-product__description {
   width: 260px;
+
+  @include md {
+    width: 292px;
+    margin-bottom: 35px;
+  }
+
+  @include xl {
+    margin-bottom: 50px;
+  }
+
   p {
+    margin-top: 0;
+    margin-bottom: 10px;
+
     font-weight: 400;
     font-size: 15px;
     line-height: 1.6;
     color: $text-color;
+
+    @include md {
+      font-size: 17px;
+      line-height: 1.7647058824;
+    }
   }
 }
 
 .week-product__specification {
   width: 260px;
   min-width: 260px;
+  margin-bottom: 30px;
+
+  @include md {
+    width: 292px;
+    margin-bottom: 55px;
+  }
+  @include xl {
+    margin-bottom: 108px;
+  }
+
 }
 
 .week-product__picture {
+  width: 260px;
+
   @include md {
     position: absolute;
     top: 0;
     right: 0;
   }
 
-  width: 260px;
+  @include xl {
+    position: absolute;
+    top: 0;
+    right: $padding-xl;
+  }
 }
 
 .week-product__img {
@@ -94,6 +159,10 @@
 
 .week-product__purchase {
   width: 260px;
+
+  @include md {
+    width: 292px;
+  }
 }
 
 .week-product__price {
@@ -105,4 +174,11 @@
   line-height: 1.4117647059;
   text-align: center;
   color: $text-color;
+
+  @include md {
+    margin-bottom: 35px;
+
+    font-size: 20px;
+    line-height: 1.2;
+  }
 }

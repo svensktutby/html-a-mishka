@@ -2,15 +2,6 @@
 ============================== */
 .store-nav {
   @include reset-list;
-
-  display: none;
-
-  @include xl {
-    position: absolute;
-    display: flex;
-    left: 0;
-    bottom: -50px;
-  }
 }
 
 .store-nav__item {
@@ -35,8 +26,9 @@
 
   &:hover,
   &:focus {
-    outline: none;
     color: $link-color--hover;
+
+    outline: none;
   }
 
   &:active {

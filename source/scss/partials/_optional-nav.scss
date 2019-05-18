@@ -2,13 +2,6 @@
 ============================== */
 .optional-nav {
   @include reset-list;
-  @include md {
-    display: flex;
-    align-items: center;
-  }
-  @include xl {
-    order: 3;
-  }
 }
 
 .optional-nav__item {
@@ -18,9 +11,6 @@
 
   &::before {
     @include pseudo();
-    @include md {
-      display: none;
-    }
 
     right: 0;
     left: 0;
@@ -29,27 +19,27 @@
     height: 1px;
 
     background-color: $border-color;
+
+    @include md {
+      display: none;
+    }
   }
 
   &--search {
     .optional-nav__text {
       @include md {
-        display: none;
+        font-size: 0;
       }
     }
   }
 }
 
 .optional-nav__link {
-  @include md {
-    padding-left: 0;
-  }
-
   position: relative;
 
   display: flex;
   align-items: center;
-  min-height: 80px;
+  min-height: 87px;
   padding-left: 45px;
 
   font-weight: 700;
@@ -58,6 +48,10 @@
   text-decoration: none;
 
   transition: color $transition-time;
+
+  @include md {
+    padding-left: 0;
+  }
 
   &:hover,
   &:focus {
@@ -73,20 +67,21 @@
 
 .optional-nav__icon {
   @include img();
-  @include md {
-    position: static;
-    top: initial;
-    left: initial;
-
-    margin-right: 35px;
-    margin-left: 35px;
-
-    transform: none;
-  }
 
   position: absolute;
   top: 50%;
   left: 0;
 
   transform: translateY(-50%);
+
+  @include md {
+    position: static;
+    top: initial;
+    left: initial;
+
+    margin-right: 32px;
+    margin-left: 32px;
+
+    transform: none;
+  }
 }
