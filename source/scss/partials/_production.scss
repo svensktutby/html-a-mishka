@@ -1,7 +1,7 @@
 /* production
 ============================== */
 .production {
-  margin-bottom: 60px;
+  margin-bottom: 63px;
 
   @include xl {
     margin-bottom: 105px;
@@ -50,7 +50,7 @@
   @include md {
     justify-content: flex-start;
     order: 2;
-    padding: 32px 40px 0 40px;
+    padding: 34px 40px 0 40px;
 
     border-top: 1px solid $border-color;
   }
@@ -97,7 +97,7 @@
 
   @include xl {
     max-width: 160px;
-    padding-top: 20px;
+    padding-top: 23px;
     padding-left: 0;
   }
 }
@@ -118,12 +118,12 @@
   }
 }
 
+.production__picture {
+  overflow: hidden;
+}
+
 .production__image {
   @include img(100%);
-
-  @include md {
-    min-height: 455px;
-  }
 }
 
 .production__play-button {
@@ -137,13 +137,12 @@
 
   @include md {
     order: 3;
-    padding: 30px 40px 45px 40px;
+    padding: 28px 40px 45px 40px;
   }
 
   @include xl {
     margin-left: 683px;
-    padding-right: 57px;
-    padding-left: 77px;
+    padding: 33px 57px 61px 77px;
   }
 }
 
@@ -155,14 +154,14 @@
   color: $text-color;
 
   @include md {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 
     font-size: 15px;
     line-height: 2;
   }
 
   @include xl {
-    margin-bottom: 55px;
+    margin-bottom: 45px;
   }
 
   p {

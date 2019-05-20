@@ -129,32 +129,34 @@
     width: 292px;
     margin-bottom: 55px;
   }
+
   @include xl {
     margin-bottom: 108px;
   }
-
 }
 
 .week-product__picture {
-  width: 260px;
+  margin-bottom: 25px;
+  overflow: hidden;
 
   @include md {
     position: absolute;
     top: 0;
     right: 0;
+
+    width: 333px;
+    margin: 0;
   }
 
   @include xl {
-    position: absolute;
-    top: 0;
     right: $padding-xl;
+
+    width: 525px;
   }
 }
 
 .week-product__img {
-  @include img();
-
-  margin: 0 auto 25px;
+  @include img(100%);
 }
 
 .week-product__purchase {

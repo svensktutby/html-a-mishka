@@ -33,22 +33,16 @@
   }
 }
 
+.product__picture {
+  overflow: hidden;
+}
+
 .product__picture-link {
   display: block;
 }
 
 .product__image {
   @include img(100%);
-
-  margin: 0 auto;
-
-  @include md {
-    min-height: 334px;
-  }
-
-  @include xl {
-    min-height: 465px;
-  }
 }
 
 .product__info {
