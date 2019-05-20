@@ -34,6 +34,7 @@
   &:before,
   &:after {
     content: "";
+
     display: table;
   }
   &:after {
@@ -45,13 +46,17 @@
 ******************************/
 %visually-hidden {
   position: absolute;
+
   width: 1px;
   height: 1px;
   margin: -1px;
   padding: 0;
   overflow: hidden;
+
   white-space: nowrap;
+
   border: 0;
+
   clip: rect(0 0 0 0);
 }
 
@@ -60,14 +65,15 @@
 @mixin reset-list {
   margin: 0;
   padding: 0;
+
   list-style: none;
 }
 
 /* No outline
 ******************************/
 @mixin no-outline {
-  outline: none;
   background: transparent;
+  outline: none;
 
   &::before {
     display: none;
@@ -79,6 +85,7 @@
 @mixin circle($size, $color) {
   width: $size;
   height: $size;
+
   background-color: $color;
   border-radius: $size/2;
 }
@@ -98,12 +105,15 @@
   @if ($horizontal and $vertical) {
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%);
   } @else if ($horizontal) {
     left: 50%;
+
     transform: translate(-50%, 0);
   } @else if ($vertical) {
     top: 50%;
+
     transform: translate(0, -50%);
   }
 }
@@ -112,6 +122,7 @@
 ******************************/
 @mixin inline-block($value: top) {
   display: inline-block;
+
   vertical-align: $value;
 }
 
@@ -120,6 +131,7 @@
 @mixin pseudo($display: block, $pos: absolute, $content: "") {
   content: $content;
   position: $pos;
+
   display: $display;
 }
 
@@ -127,6 +139,7 @@
 ******************************/
 @mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false) {
   @include pseudo($pos: $position);
+
   width: 0;
   height: 0;
   @if $round {
@@ -134,21 +147,25 @@
   }
   @if $direction == down {
     margin-top: 0 - round( $size / 2.5 );
+
     border-top: $size solid $color;
     border-right: $size solid transparent;
     border-left: $size solid transparent;
   } @else if $direction == up {
     margin-bottom: 0 - round( $size / 2.5 );
+
     border-right: $size solid transparent;
     border-bottom: $size solid $color;
     border-left: $size solid transparent;
   } @else if $direction == right {
     margin-right: -$size;
+
     border-top: $size solid transparent;
     border-bottom: $size solid transparent;
     border-left: $size solid $color;
   } @else if  $direction == left {
     margin-left: -$size;
+
     border-top: $size solid transparent;
     border-right: $size solid $color;
     border-bottom: $size solid transparent;
@@ -182,6 +199,11 @@
     @content;
   }
 } // Tiny devices
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+} // retina 1.5x devices
 
 /* Container with media queries
 ******************************/
@@ -189,25 +211,25 @@
   margin: 0 auto;
 
   @if $screen == xl {
-    padding-left: $padding-xl;
-    padding-right: $padding-xl;
     width: $screen-xl;
+    padding-right: $padding-xl;
+    padding-left: $padding-xl;
   } @else if $screen == lg {
-    padding-left: $padding-lg;
-    padding-right: $padding-lg;
     width: $screen-lg;
+    padding-right: $padding-lg;
+    padding-left: $padding-lg;
   } @else if $screen == md {
-    padding-left: $padding-md;
-    padding-right: $padding-md;
     width: $screen-md;
+    padding-right: $padding-md;
+    padding-left: $padding-md;
   } @else if $screen == sm {
-    padding-left: $padding-sm;
-    padding-right: $padding-sm;
     width: $screen-sm;
+    padding-right: $padding-sm;
+    padding-left: $padding-sm;
   } @else if $screen == xs {
-    padding-left: $padding-xs;
-    padding-right: $padding-xs;
     width: $screen-xs;
+    padding-right: $padding-xs;
+    padding-left: $padding-xs;
   }
 }
 
@@ -216,27 +238,34 @@
 @mixin wavy-border-grey {
   &::before,
   &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 2;
+
+    height: 4px;
+
+    background-repeat: repeat-x;
+
     @include md {
       height: 9px;
     }
 
     @include xl {
-      height: 12px;
       width: 1050px;
+      height: 12px;
       margin: 0 auto;
     }
-
-    content: "";
-    position: absolute;
-    right: 0;
-    left: 0;
-
-    height: 4px;
-
-    background-repeat: repeat-x;
   }
 
   &::before {
+    bottom: 0;
+
+    background-image: radial-gradient(8px, transparent, transparent 3px, $border-color 4px, $border-color 5px, transparent 6px);
+    background-position-x: -8px;
+    background-size: 16px 12px;
+
     @include md {
       background-image: radial-gradient(18px, transparent, transparent 10px, $border-color 11px, $border-color 16px, transparent 17px);
       background-position-x: -20px;
@@ -248,15 +277,15 @@
       background-position-x: -27px;
       background-size: 54px 43px;
     }
-
-    bottom: 0;
-
-    background-image: radial-gradient(8px, transparent, transparent 3px, $border-color 4px, $border-color 5px, transparent 6px);
-    background-position-x: -8px;
-    background-size: 16px 12px;
   }
 
   &::after {
+    bottom: -4px;
+
+    background-image: radial-gradient(8px, transparent, transparent 3px, $border-color 4px, $border-color 5px, transparent 6px);
+    background-position-y: -10px;
+    background-size: 16px 16px;
+
     @include md {
       bottom: -9px;
 
@@ -272,16 +301,10 @@
       background-position-y: -33px;
       background-size: 54px 43px;
     }
-
-    bottom: -4px;
-
-    background-image: radial-gradient(8px, transparent, transparent 3px, $border-color 4px, $border-color 5px, transparent 6px);
-    background-position-y: -10px;
-    background-size: 16px 16px;
   }
 }
 
-/* Wavy border grey
+/* Wavy border white
 ******************************/
 @mixin wavy-border-white {
   @include md {
@@ -316,14 +339,14 @@
     &::before {
       height: 10px;
 
-      background-image: radial-gradient(circle at 15px -10px,transparent 19px,#fff 20px);
+      background-image: radial-gradient(circle at 15px -10px,transparent 19px,$white 20px);
       background-size: 30px 20px;
     }
 
     &::after {
       height: 15px;
 
-      background-image: radial-gradient(circle at 15px 20px,#fff 19px,transparent 20px);
+      background-image: radial-gradient(circle at 15px 20px,$white 19px,transparent 20px);
       background-size: 60px 20px;
     }
   }

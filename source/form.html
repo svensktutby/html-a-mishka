@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Мишка: форма заказа</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="./js/picturefill.min.js" async></script>
 </head>
 <body>
   <!-- / ========= page-header ========= \ -->
@@ -23,7 +24,11 @@
           <!-- / ========= logo ========= \ -->
           <div class="main-nav__logo logo">
             <a class="logo__link" href="index.html">
-              <img class="logo__img" src="./img/logo-mobile.svg" width="86" height="35" alt="Логотип магазина Мишка">
+              <picture>
+                <source media="(min-width: 1150px)" srcset="./img/logo-desktop.svg">
+                <source media="(min-width: 768px)" srcset="./img/logo-tablet.svg">
+                <img class="logo__img" src="./img/logo-mobile.svg" width="86" height="35" alt="Логотип магазина Мишка">
+              </picture>
               <span class="logo__text visually-hidden">Mishka</span>
             </a>
           </div>
@@ -264,5 +269,8 @@
   </footer>
   <!-- \ ========= page-footer ========= / -->
 
+  <!-- / ========= scripts ========= \ -->
+
+  <!-- \ ========= scripts ========= / -->
 </body>
 </html>
