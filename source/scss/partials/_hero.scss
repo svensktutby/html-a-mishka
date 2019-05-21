@@ -124,7 +124,7 @@
 
 .hero__link {
   display: block;
-  min-height: 103px;
+  height: 103px;
 
   font-weight: 700;
   font-size: 19px;
@@ -138,7 +138,7 @@
     position: relative;
     top: 5px;
 
-    min-height: 125px;
+    height: 125px;
 
     font-size: 20px;
     line-height: 1.5;
@@ -179,7 +179,7 @@
 }
 
 .hero__icon {
-  @include img();
+  @include img($height: 60px);
 
   flex-basis: 60px;
 }
