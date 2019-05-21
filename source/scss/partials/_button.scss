@@ -12,6 +12,7 @@
   text-transform: uppercase;
   text-decoration: none;
 
+  background-color: $white;
   border: 2px solid $text-color;
 
   transition: border-color $transition-time, background-color $transition-time, color $transition-time;

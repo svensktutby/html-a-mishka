@@ -130,6 +130,11 @@
   @include absol-center();
 
   display: block;
+  width: 101px;
+}
+
+.production__play-icon {
+  @include img(100%);
 }
 
 .production__bottom {
