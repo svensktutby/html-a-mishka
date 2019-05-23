@@ -126,3 +126,20 @@
     font-size: 17px;
   }
 }
+
+.product__order-button {
+  transition: fill $transition-time;
+
+  fill: rgba($black, 0.2);
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    fill: $light-teal;
+  }
+
+  &:active {
+    fill: rgba($light-teal, 0.3);
+  }
+}

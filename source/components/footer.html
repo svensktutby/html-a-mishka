@@ -2,10 +2,11 @@
   <div class="page-footer__inner">
     <!-- / ========= logo ========= \ -->
     <div class="page-footer__logo logo">
-      <a class="logo__link" href="index.html">
-        <img class="logo__img" src="./img/logo-footer.svg" width="102" height="34"
-             alt="Логотип магазина Мишка">
-        <span class="logo__text visually-hidden">Mishka</span>
+      <a class="logo__link" href="index.html" aria-label="Переход на главную страницу магазина Мишка">
+        <svg class="logo__img" width="102" height="34" aria-labelledby="logo-footer-title" role="img">
+          <title id="logo-footer-title">Магазин Мишка</title>
+          <use xlink:href="#logo-footer"></use>
+        </svg>
       </a>
     </div>
     <!-- \ ========= logo ========= / -->
@@ -13,20 +14,29 @@
     <div class="page-footer__socials socials">
       <ul class="socials__list">
         <li class="socials__item socials__item--instagram">
-          <a class="socials__link" href="http://instagram.com" target="_blank">
-            <img class="socials__icon" src="./img/icon-insta.svg" width="22" height="21" alt="Instagram">
+          <a class="socials__link" href="http://instagram.com" target="_blank"
+             aria-label="Переход на наш профиль в Инстаграмме">
+            <svg class="socials__icon" width="22" height="21" aria-hidden="true" role="presentation">
+              <use xlink:href="#icon-insta"></use>
+            </svg>
             <span class="socials__text visually-hidden">Мы в Инстаграме</span>
           </a>
         </li>
         <li class="socials__item socials__item--facebook">
-          <a class="socials__link" href="http://facebook.com" target="_blank">
-            <img class="socials__icon" src="./img/icon-fb.svg" width="15" height="28" alt="Facebook">
+          <a class="socials__link" href="http://facebook.com" target="_blank"
+             aria-label="Переход на наш профиль в Фейсбуке">
+            <svg class="socials__icon" width="15" height="28" aria-hidden="true" role="presentation">
+              <use xlink:href="#icon-fb"></use>
+            </svg>
             <span class="socials__text visually-hidden">Мы в Фейсбуке</span>
           </a>
         </li>
         <li class="socials__item socials__item--twitter">
-          <a class="socials__link" href="http://twitter.com" target="_blank">
-            <img class="socials__icon" src="./img/icon-twitter.svg" width="23" height="20" alt="Twitter">
+          <a class="socials__link" href="http://twitter.com" target="_blank"
+             aria-label="Переход на наш профиль в Твиттре">
+            <svg class="socials__icon" width="23" height="20" aria-hidden="true" role="presentation">
+              <use xlink:href="#icon-twitter"></use>
+            </svg>
             <span class="socials__text visually-hidden">Мы в Твиттере</span>
           </a>
         </li>
@@ -35,10 +45,11 @@
     <!-- \ ========= socials ========= / -->
     <!-- / ========= copyright ========= \ -->
     <div class="page-footer__copyright copyright">
-      <a class="copyright__link" href="#">
+      <a class="copyright__link" href="#" aria-label="Переход на сайт в HTML Academy">
         <span class="copyright__text">Разработано</span>
-        <img class="copyright__img" src="./img/logo-htmlacademy.svg" width="27" height="34"
-             alt="Логотип HTML Academy">
+        <svg class="copyright__img" width="27" height="34" role="img">
+          <use xlink:href="#logo-htmlacademy"></use>
+        </svg>
       </a>
     </div>
     <!-- \ ========= copyright ========= / -->

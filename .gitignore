@@ -5,7 +5,6 @@
 # Project
 .idea
 build/
-source/css/*.css
 
 # NodeJS
 node_modules/

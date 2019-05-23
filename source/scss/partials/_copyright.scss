@@ -8,12 +8,25 @@
   color: $link-color;
   text-decoration: none;
 
+  transition: color $transition-time, fill $transition-time;
+
+  fill: $light-teal;
+
   @include md {
     justify-content: flex-end;
   }
 
+  &:hover,
+  &:focus {
+    outline: none;
+
+    fill: $dark-teal;
+  }
+
   &:active {
     color: $link-color--active;
+
+    fill: rgba($dark-teal, 0.3);
   }
 }
 

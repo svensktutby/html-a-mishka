@@ -15,9 +15,10 @@ const gulp = require('gulp'),
       imagemin = require("gulp-imagemin"),
       pngquant = require('imagemin-pngquant'),
       mozjpeg = require('imagemin-mozjpeg'),
-      webp = require("gulp-webp"),
+      webp = require('imagemin-webp'),
       svgstore = require('gulp-svgstore'),
       cache = require('gulp-cache'),
+      extReplace = require('gulp-ext-replace'),
       del = require('del'),
       server = require('browser-sync').create();
 
@@ -109,7 +110,7 @@ gulp.task('watch', function () {
   gulp.watch('./source/js/parts/**/*.js', gulp.parallel('scripts'));
   gulp.watch('./source/**/*.html', gulp.parallel('html'));
   gulp.watch('./source/img/**/{icon-*,logo-*}.svg', gulp.parallel('sprite:svg'));
-  gulp.watch('./build/**/*').on('change', server.reload);
+  gulp.watch('./build/**/*.{css,js,html}').on('change', server.reload);
 });
 
 /* Images
@@ -117,7 +118,6 @@ gulp.task('watch', function () {
 gulp.task('images', function () {
   return gulp.src('./source/img/**/*.{png,jpg,svg}')
     .pipe(cache(imagemin( // With caching
-      // .pipe(imagemin( // Compressing images without caching
       [
       pngquant({
         quality : [0.8, 0.9],
@@ -144,7 +144,12 @@ gulp.task('images', function () {
 ******************************/
 gulp.task("webp", function () {
   return gulp.src("./source/img/**/*.{png,jpg}")
-    .pipe(webp({quality: 90}))
+    .pipe(imagemin([
+      webp({
+        quality: 90
+      })
+    ]))
+    .pipe(extReplace(".webp"))
     .pipe(gulp.dest("./build/img"));
 });
 

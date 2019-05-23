@@ -3,6 +3,7 @@
 /* Base colors
 ******************************/
 $black:                 #000;
+$dark-grey:             #231f20;
 $grey:                  #444;
 $light-grey:            #f1f1f1;
 $white:                 #fff;
@@ -19,6 +20,7 @@ $link-color:            $black;
 $link-color--hover:     rgba($black, 0.6);
 $link-color--active:    rgba($black, 0.3);
 $border-color:          rgba($grey, 0.1);
+$icon-color:            $dark-grey;
 
 /* Fonts
 ******************************/

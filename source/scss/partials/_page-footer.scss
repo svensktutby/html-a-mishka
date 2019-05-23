@@ -36,6 +36,23 @@
     width: 30%;
   }
 
+  .logo__link {
+    transition: fill $transition-time;
+
+    fill: $icon-color;
+
+    &:hover,
+    &:focus {
+      outline: none;
+
+      fill: $dark-teal;
+    }
+
+    &:active {
+      fill: rgba($dark-teal, 0.3);
+    }
+  }
+
   .logo__img {
     width: 102px;
   }
