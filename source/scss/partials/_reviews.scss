@@ -32,6 +32,7 @@
     background-image: url("../img/review@1x.jpg");
     background-repeat: no-repeat;
     background-position: 0 0;
+
     @include retina {
       background-image: url("../img/review@2x.jpg");
       background-size: 350px auto;
@@ -159,10 +160,27 @@
   &--prev {
     border-right: none;
   }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    .reviews__icon {
+      fill: rgba($black, 0.6);
+    }
+  }
+
+  &:active {
+    .reviews__icon {
+      fill: rgba($black, 0.3);
+    }
+  }
 }
 
 .reviews__icon {
   @include inline-block(middle);
+
+  fill: $black;
 }
 
 .reviews__write-button {

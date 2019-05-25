@@ -47,7 +47,9 @@
   color: $link-color;
   text-decoration: none;
 
-  transition: color $transition-time;
+  transition: color $transition-time, fill $transition-time;
+
+  fill: rgba($black, 0.2);
 
   @include md {
     padding-left: 0;
@@ -58,10 +60,14 @@
     color: $link-color--hover;
 
     outline: none;
+
+    fill: $light-teal;
   }
 
   &:active {
     color: $link-color--active;
+
+    fill: rgba($light-teal, 0.3);
   }
 }
 

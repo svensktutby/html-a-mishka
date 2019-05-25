@@ -72,6 +72,18 @@
     padding-right: 25px;
   }
 
+  .logo__link {
+    &:hover,
+    &:focus {
+      outline: none;
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
   .logo__img {
     width: 86px;
 

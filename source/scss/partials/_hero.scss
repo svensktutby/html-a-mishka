@@ -151,10 +151,18 @@
     @include md {
       top: 0;
     }
+
+    .hero__icon {
+      fill: rgba(#149080, 0.7);
+    }
   }
 
   &:active {
     color: rgba($white, 0.3);
+
+    .hero__icon {
+      fill: rgba(#149080, 0.3);
+    }
   }
 }
 
@@ -182,4 +190,8 @@
   @include img($height: 60px);
 
   flex-basis: 60px;
+
+  transition: fill $transition-time;
+
+  fill: rgba(#149080, 0.5);
 }

@@ -131,6 +131,19 @@
 
   display: block;
   width: 101px;
+
+  transition: all $transition-time;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+
+  &:active {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.3;
+  }
 }
 
 .production__play-icon {
