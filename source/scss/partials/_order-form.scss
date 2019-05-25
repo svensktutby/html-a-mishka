@@ -197,6 +197,7 @@
   font-size: 17px;
   line-height: 1.0588235294;
   color: $text-color-dark;
+  transition: fill $transition-time;
 
   &--type,
   &--color {
@@ -314,12 +315,17 @@
 
   &--phone,
   &--email {
-    .order-form__icon {
-      position: absolute;
-      top: 50%;
-      right: 0;
+    position: absolute;
+    top: 50%;
+    right: 0;
 
-      transform: translate(-10px, -50%);
+    width: 32px;
+    height: 32px;
+
+    transform: translate(-10px, -50%);
+
+    .order-form__icon {
+      @include absol-center();
     }
   }
 }
@@ -380,6 +386,11 @@
 
     @include md {
       background-color: $light-grey;
+    }
+
+    &:hover + .order-form__label,
+    &:focus + .order-form__label {
+      fill: $light-teal;
     }
   }
 }
