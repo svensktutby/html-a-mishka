@@ -221,11 +221,28 @@
     order: 3;
     width: 50%;
   }
+
+  &--nojs {
+    .map__content {
+      display: none;
+    }
+
+    .contacts__img {
+      display: block;
+    }
+  }
+}
+
+.map__content {
+  width: 100%;
+  min-height: 457px;
+  margin: 0 auto;
 }
 
 .contacts__img {
   @include img();
 
+  display: none;
   margin: 0 auto;
 }
 

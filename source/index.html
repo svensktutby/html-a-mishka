@@ -203,9 +203,22 @@
             </tr>
           </table>
         </div>
-        <div class="contacts__map map">
-          <img class="contacts__img map__img" src="./img/map-mobile@1x.jpg" width="322" height="457"
-               alt="Адрес главного офиса и офлайн-магазина по улице Большая Конюшенная 19/8 в городе Санкт-Петербург">
+        <div class="contacts__map contacts__map--nojs map">
+          <div class="map__content" id="map"></div>
+          <picture>
+            <source type="image/webp" media="(min-width: 1150px)"
+                    srcset="./img/map-desktop@1x.webp 1x, ./img/map-desktop@2x.webp 2x">
+            <source type="image/webp" media="(min-width: 768px)"
+                    srcset="./img/map-tablet@1x.webp 1x, ./img/map-tablet@2x.webp 2x">
+            <source type="image/webp"
+                    srcset="./img/map-mobile@1x.webp 1x, ./img/map-mobile@2x.webp 2x">
+            <source media="(min-width: 1150px)"
+                    srcset="./img/map-desktop@1x.jpg 1x, ./img/map-desktop@2x.jpg 2x">
+            <source media="(min-width: 768px)"
+                    srcset="./img/map-tablet@1x.jpg 1x, ./img/map-tablet@2x.jpg 2x">
+            <img class="contacts__img map__img" src="./img/map-mobile@1x.jpg"
+                 alt="Адрес главного офиса и офлайн-магазина по улице Большая Конюшенная 19/8 в городе Санкт-Петербург">
+          </picture>
         </div>
         <div class="contacts__button-wrapper">
           <a class="contacts__button button" href="#">Напишите нам</a>
@@ -225,6 +238,7 @@
   <!-- \ ========= modal ========= / -->
 
   <!-- / ========= scripts ========= \ -->
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
   <script src="./js/script.min.js"></script>
   <!-- \ ========= scripts ========= / -->
 </body>

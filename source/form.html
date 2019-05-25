@@ -91,12 +91,12 @@
               <div class="order-form__field">
                 <label class="order-form__label order-form__label--name" for="firstname">Имя:</label>
                 <input class="order-form__input order-form__input--name" type="text" name="firstname" id="firstname"
-                       placeholder="Введите ваше имя*">
+                       placeholder="Введите ваше имя*" data-valid="required">
               </div>
               <div class="order-form__field">
                 <label class="order-form__label order-form__label--name" for="lastname">Фамилия:</label>
                 <input class="order-form__input order-form__input--name" type="text" name="lastname" id="lastname"
-                       placeholder="Укажите фамилию*">
+                       placeholder="Укажите фамилию*" data-valid="required">
               </div>
               <div class="order-form__field">
                 <label class="order-form__label order-form__label--name" for="middlename">Отчество:</label>
@@ -113,7 +113,7 @@
             <div class="order-form__field-list order-form__field-list--phone">
               <div class="order-form__field">
                 <input class="order-form__input order-form__input--phone" type="tel" name="phone" id="phone"
-                       placeholder="+7 ХХХ ХХ ХХ*">
+                       placeholder="+7 ХХХ ХХ ХХ*" data-valid="required" data-phone>
                 <label class="order-form__label order-form__label--phone" for="phone">
                   <svg class="order-form__icon" width="25" height="24" aria-hidden="true" role="presentation">
                     <use xlink:href="#icon-phone"></use>
@@ -130,7 +130,7 @@
             <div class="order-form__field-list order-form__field-list--email">
               <div class="order-form__field">
                 <input class="order-form__input order-form__input--email" type="email" name="email" id="email"
-                       placeholder="Ваш Email*">
+                       placeholder="Ваш Email*" data-valid="required" data-email>
                 <label class="order-form__label order-form__label--email" for="email">
                   <svg class="order-form__icon" width="32" height="32" aria-hidden="true" role="presentation">
                     <use xlink:href="#icon-mail"></use>
@@ -154,7 +154,7 @@
         </fieldset>
         <div class="order-form__bottom">
           <div class="order-form__notification">*Поля обязательны для заполнения</div>
-          <button class="order-form__button button">Отправить заказ</button>
+          <button class="order-form__button button" type="submit">Отправить заказ</button>
         </div>
       </form>
     </div>

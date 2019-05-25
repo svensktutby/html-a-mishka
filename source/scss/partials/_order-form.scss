@@ -463,6 +463,7 @@
 
 .order-form__button {
   width: 100%;
+  cursor: pointer;
 
   @include md {
     width: 230px;

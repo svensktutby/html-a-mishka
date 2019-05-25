@@ -67,8 +67,13 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
   return gulp.src([
     './source/js/parts/init.js',
+    './source/js/parts/burger.js',
     './source/js/parts/menu.js',
-    './source/js/parts/modal.js'
+    './source/js/parts/map.js',
+    './source/js/parts/modal-cart.js',
+    './source/js/parts/validation.js',
+    './source/js/parts/form.js',
+    './source/js/parts/main.js'
   ])
     .pipe(plumber())
     .pipe(concat('script.min.js'))
