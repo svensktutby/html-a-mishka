@@ -1,5 +1,33 @@
 /* page-main
 ============================== */
+.page-main {
+  padding-bottom: 40px;
+
+  @include md {
+    padding-bottom: 60px;
+  }
+
+  &--form {
+    padding-bottom: 55px;
+
+    @include md {
+      padding-bottom: 50px;
+    }
+  }
+
+  &--catalog {
+    padding-bottom: 55px;
+
+    @include md {
+      padding-bottom: 65px;
+    }
+
+    @include xl {
+      padding-bottom: 105px;
+    }
+  }
+}
+
 .page-main__heading {
   padding-top: 73px;
   padding-bottom: 73px;

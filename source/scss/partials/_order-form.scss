@@ -1,8 +1,6 @@
 /* order-form
 ============================== */
 .order-form {
-  padding-bottom: 55px;
-
   background-color: $white;
 }
 
@@ -47,26 +45,27 @@
   &--phone {
     @include md {
       padding-top: 45px;
-      padding-bottom: 10px;
+      padding-bottom: 15px;
     }
   }
 
   &--email {
     @include md {
-      padding-top: 10px;
+      padding-top: 15px;
       padding-bottom: 45px;
     }
   }
 
   &--message {
-    padding-bottom: 15px;
+    padding-bottom: 17px;
 
     @include md {
-      margin-bottom: 40px;
+      margin-bottom: 55px;
+      padding-bottom: 0;
     }
 
     @include xl {
-      margin-bottom: 30px;
+      margin-bottom: 50px;
     }
   }
 }
@@ -142,6 +141,7 @@
       display: flex;
       flex-wrap: wrap;
     }
+
     .order-form__field {
       @include md {
         width: 50%;
@@ -197,6 +197,7 @@
   font-size: 17px;
   line-height: 1.0588235294;
   color: $text-color-dark;
+
   transition: fill $transition-time;
 
   &--type,
@@ -393,6 +394,25 @@
       fill: $light-teal;
     }
   }
+
+  &--error {
+    border-color: $light-red;
+
+    &:hover,
+    &:focus {
+      border-color: $light-red;
+
+      & + .order-form__label,
+      & + .order-form__label {
+        fill: $light-red;
+      }
+    }
+
+    & + .order-form__label,
+    & + .order-form__label {
+      fill: $light-red;
+    }
+  }
 }
 
 .order-form__message {
@@ -448,7 +468,7 @@
 }
 
 .order-form__notification {
-  margin-bottom: 30px;
+  margin-bottom: 31px;
 
   font-size: 14px;
   line-height: 1.1428571429;
@@ -463,6 +483,7 @@
 
 .order-form__button {
   width: 100%;
+
   cursor: pointer;
 
   @include md {

@@ -9,11 +9,7 @@
 
   @include md {
     padding-top: 0;
-    padding-bottom: 90px;
-  }
-
-  @include xl {
-    padding-bottom: 140px;
+    padding-bottom: 75px;
   }
 }
 
@@ -28,6 +24,7 @@
     justify-content: space-between;
     align-items: flex-start;
     padding-top: 75px;
+    padding-bottom: 15px;
 
     background-image: url("../img/review@1x.jpg");
     background-repeat: no-repeat;
@@ -41,6 +38,8 @@
 
   @include xl {
     @include container(xl);
+
+    padding-bottom: 65px;
 
     background-position: $padding-xl 0;
   }
@@ -101,7 +100,8 @@
   @include md {
     padding-top: 48px;
   }
-  @include md {
+
+  @include xl {
     padding-top: 28px;
   }
 }
@@ -137,6 +137,8 @@
     position: absolute;
     right: 0;
     bottom: 0;
+
+    margin-bottom: 35px;
   }
 }
 

@@ -53,6 +53,8 @@
 }
 
 .week-product__title {
+  margin-bottom: 6px;
+
   @include xl {
     position: relative;
     z-index: 1;
@@ -94,6 +96,7 @@
 
 .week-product__description {
   width: 260px;
+  margin-bottom: 19px;
 
   @include md {
     width: 292px;
@@ -123,7 +126,7 @@
 .week-product__specification {
   width: 260px;
   min-width: 260px;
-  margin-bottom: 30px;
+  margin-bottom: 27px;
 
   @include md {
     width: 292px;

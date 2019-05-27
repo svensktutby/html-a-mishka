@@ -1,20 +1,6 @@
 /* product
 ============================== */
 .product {
-  margin-bottom: 30px;
-
-  @include md {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 50px;
-  }
-
-  @include xl {
-    flex-direction: column;
-    width: 30%;
-    margin-bottom: 55px;
-  }
-
   &:hover,
   &:focus {
     outline: none;
@@ -46,7 +32,7 @@
 }
 
 .product__info {
-  padding: 25px;
+  padding: 25px 25px 15px;
 
   border: 1px solid $border-color;
 
@@ -55,12 +41,11 @@
     flex-grow: 1;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 20px;
   }
 }
 
 .product__description {
-  margin-bottom: 25px;
+  margin-bottom: 23px;
 
   @include xl {
     margin-bottom: 15px;
@@ -69,14 +54,15 @@
 
 .product__title {
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 
-  @include xl {
-    margin-bottom: 5px;
+  @include md {
+    margin-bottom: 10px;
   }
 }
 
 .product__link {
+  display: block;
   font-weight: 700;
   font-size: 17px;
   line-height: 1.4117647059;
@@ -112,12 +98,23 @@
 .product__purchase {
   display: flex;
   justify-content: space-between;
-  padding-top: 20px;
+  padding-top: 12px;
 
   border-top: 1px solid $border-color;
+
+  @include md {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+  @include md {
+    padding-left: 0;
+  }
 }
 
 .product__price {
+  padding-top: 10px;
+
   font-weight: 700;
   font-size: 15px;
   color: $text-color-dark;
@@ -128,6 +125,8 @@
 }
 
 .product__order-button {
+  padding: 10px 0 10px 20px;
+
   transition: fill $transition-time;
 
   fill: rgba($black, 0.2);

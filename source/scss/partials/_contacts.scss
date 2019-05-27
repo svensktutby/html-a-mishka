@@ -1,10 +1,10 @@
 /* contacts
 ============================== */
 .contacts {
-  padding: 35px 0;
+  padding-top: 35px;
 
   @include md {
-    padding: 55px 0;
+    padding-top: 50px;
   }
 
   @include xl {
@@ -25,6 +25,8 @@
 
 .contacts__top {
   @include container(xs);
+
+  padding-top: 7px;
 
   @include md {
     @include container(md);
@@ -89,17 +91,19 @@
 }
 
 .contacts__list {
-  display: block;
   margin-bottom: 25px;
 
   border-collapse: collapse;
 
   @include md {
+    display: block;
     margin-bottom: 40px;
   }
 
   @include xl {
-    margin-bottom: 35px;
+    display: table;
+    min-width: 340px;
+    margin-bottom: 65px;
   }
 
   tbody {
@@ -109,7 +113,7 @@
     }
 
     @include xl {
-      display: initial;
+      display: table-row-group;
     }
   }
 }
@@ -123,7 +127,7 @@
   }
 
   @include xl {
-    display: initial;
+    display: table-row;
   }
 }
 
@@ -155,7 +159,7 @@
     }
 
     @include xl {
-      width: 28%;
+      width: 22%;
     }
   }
 
@@ -167,7 +171,7 @@
     }
 
     @include xl {
-      width: 72%;
+      width: 78%;
     }
   }
 }

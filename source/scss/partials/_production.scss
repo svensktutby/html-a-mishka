@@ -1,13 +1,5 @@
 /* production
 ============================== */
-.production {
-  margin-bottom: 63px;
-
-  @include xl {
-    margin-bottom: 105px;
-  }
-}
-
 .production__inner {
   @include container(xs);
 
@@ -72,7 +64,7 @@
     width: 32px;
     height: 32px;
 
-    background-image: url(../img/icon-video.svg);
+    background-image: url("../img/icon-video.svg");
     background-repeat: no-repeat;
     background-position: 0 0;
   }

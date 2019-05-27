@@ -10,12 +10,18 @@
     "url": "git+https://github.com/svensktutby/html-a-mishka.git"
   },
   "scripts": {
+    "style:lint": "stylelint 'source/scss/**/*.scss' --syntax scss",
+    "style:fix": "stylelint 'source/scss/**/*.scss' --syntax scss --fix",
+    "script:lint": "eslint 'source/js/parts/*.js'",
+    "script:fix": "eslint 'source/js/parts/*.js' --fix",
+    "test": "npm run style:lint && npm run script:lint",
     "build": "gulp build",
     "start": "npm run build && gulp serve"
   },
   "devDependencies": {
     "browser-sync": "^2.26.5",
     "del": "^4.1.0",
+    "eslint": "^5.16.0",
     "gulp": "^4.0.1",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-cache": "^1.1.1",
@@ -23,6 +29,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-ext-replace": "^0.3.0",
     "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^2.0.2",
     "gulp-imagemin": "^5.0.3",
     "gulp-plumber": "^1.2.1",
     "gulp-posthtml": "^3.0.4",
@@ -35,7 +42,9 @@
     "imagemin-pngquant": "^7.0.0",
     "imagemin-webp": "^5.0.0",
     "node-normalize-scss": "^8.0.0",
-    "posthtml-include": "^1.2.0"
+    "posthtml-include": "^1.2.0",
+    "stylelint": "^10.0.1",
+    "stylelint-config-htmlacademy": "^0.1.3"
   },
   "dependencies": {}
 }

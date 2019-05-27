@@ -4,9 +4,11 @@
  ******************************/
 ;(function() {
   var weekOrderBtn = document.querySelector('.week-product__order-button');
-  var productOrderBtn = document.querySelector('.product__order-button');
+  var productOrderBtns = document.querySelectorAll('.product__order-button');
   var form = document.querySelector('.order-form');
-  var orderBtns = [weekOrderBtn, productOrderBtn];
+  var requiredFields = document.querySelectorAll('[data-valid="required"]');
+  var orderBtns = Array.prototype.slice.call(productOrderBtns);
+  orderBtns.push(weekOrderBtn);
 
   function addClickForModal(btnsArr) {
     for (var i = 0; i < btnsArr.length; i++) {
@@ -31,6 +33,17 @@
         console.log('Is not valid');
       }
     });
+  }
+
+  if (requiredFields) {
+    for (var i = 0; i < requiredFields.length; i++) {
+      requiredFields[i].addEventListener('focus', function () {
+        var that = this;
+        if (that.classList.contains('order-form__input--error')) {
+          that.classList.remove('order-form__input--error');
+        }
+      });
+    }
   }
 
   MISHKA.menu.open();

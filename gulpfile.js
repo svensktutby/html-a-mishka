@@ -9,10 +9,11 @@ const gulp = require('gulp'),
       rename = require('gulp-rename'),
       uglify = require('gulp-uglify'),
       concat = require('gulp-concat'),
+      gulpIf = require('gulp-if'),
       posthtml = require('gulp-posthtml'),
       include = require('posthtml-include'),
-      htmlmin = require("gulp-htmlmin"),
-      imagemin = require("gulp-imagemin"),
+      htmlmin = require('gulp-htmlmin'),
+      imagemin = require('gulp-imagemin'),
       pngquant = require('imagemin-pngquant'),
       mozjpeg = require('imagemin-mozjpeg'),
       webp = require('imagemin-webp'),
@@ -22,9 +23,11 @@ const gulp = require('gulp'),
       del = require('del'),
       server = require('browser-sync').create();
 
+const isDev = true;
+
 /* Plumber error message
  ******************************/
-const plumberLog = function(error) {
+const plumberLog = function (error) {
   console.log([
     '',
     '----------ERROR MESSAGE START----------',
@@ -41,7 +44,7 @@ const plumberLog = function(error) {
 gulp.task('styles', function () {
   return gulp.src('./source/scss/main.scss')
     .pipe(plumber())
-    .pipe(sourcemaps.init())
+    .pipe(gulpIf(isDev, sourcemaps.init()))
     .pipe(sass({
       includePaths: require('node-normalize-scss').includePaths
     })).on('error', plumberLog)
@@ -55,11 +58,11 @@ gulp.task('styles', function () {
       cascade: false
     }))
     .pipe(rename('style.css'))
-    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./build/css'))
-    .pipe(minify())
-    .pipe(rename("style.min.css"))
-    .pipe(gulp.dest("./build/css"));
+    .pipe(rename('style.min.css'))
+    .pipe(gulpIf(!isDev, minify()))
+    .pipe(gulpIf(isDev, sourcemaps.write()))
+    .pipe(gulp.dest('./build/css'));
 });
 
 /* Scripts
@@ -76,8 +79,12 @@ gulp.task('scripts', function () {
     './source/js/parts/main.js'
   ])
     .pipe(plumber())
-    .pipe(concat('script.min.js'))
+    .pipe(gulpIf(isDev, sourcemaps.init()))
+    .pipe(concat('script.js'))
+    .pipe(gulp.dest('./build/js'))
+    .pipe(rename('script.min.js'))
     .pipe(uglify()).on('error', plumberLog)
+    .pipe(gulpIf(isDev, sourcemaps.write()))
     .pipe(gulp.dest('./build/js'));
 });
 
@@ -93,29 +100,7 @@ gulp.task('html', function () {
       collapseWhitespace: false,
       removeComments: false
     }))
-    .pipe(gulp.dest("./build"));
-});
-
-/* Server
- ******************************/
-gulp.task('serve', function () {
-  server.init({
-    server: {
-      port: 3000,
-      baseDir: './build'
-    },
-    notify: false
-  });
-});
-
-/* Watchers
-******************************/
-gulp.task('watch', function () {
-  gulp.watch('./source/scss/**/*.scss', gulp.parallel('styles'));
-  gulp.watch('./source/js/parts/**/*.js', gulp.parallel('scripts'));
-  gulp.watch('./source/**/*.html', gulp.parallel('html'));
-  gulp.watch('./source/img/**/{icon-*,logo-*}.svg', gulp.parallel('sprite:svg'));
-  gulp.watch('./build/**/*.{css,js,html}').on('change', server.reload);
+    .pipe(gulp.dest('./build'));
 });
 
 /* Images
@@ -147,15 +132,15 @@ gulp.task('images', function () {
 
 /* WEBP
 ******************************/
-gulp.task("webp", function () {
-  return gulp.src("./source/img/**/*.{png,jpg}")
+gulp.task('webp', function () {
+  return gulp.src('./source/img/**/*.{jpg,jpeg,png}')
     .pipe(imagemin([
       webp({
         quality: 90
       })
     ]))
-    .pipe(extReplace(".webp"))
-    .pipe(gulp.dest("./build/img"));
+    .pipe(extReplace('.webp'))
+    .pipe(gulp.dest('./build/img'));
 });
 
 /* SVG sprite
@@ -189,8 +174,31 @@ gulp.task('copy', function () {
 
 /* Clean
 ******************************/
-gulp.task('clean', function() {
+gulp.task('clean', function () {
   return del('./build');
+});
+
+/* Server
+ ******************************/
+gulp.task('serve', function () {
+  server.init({
+    server: {
+      port: 3000,
+      baseDir: './build'
+    },
+    notify: false
+  });
+});
+
+/* Watchers
+******************************/
+gulp.task('watch', function () {
+  gulp.watch('./source/scss/**/*.scss', gulp.parallel('styles'));
+  gulp.watch('./source/js/parts/**/*.js', gulp.parallel('scripts'));
+  gulp.watch('./source/**/*.html', gulp.parallel('html'));
+  gulp.watch('./source/img/**/*', gulp.parallel('images'));
+  gulp.watch('./source/img/**/{icon-*,logo-*}.svg', gulp.parallel('sprite:svg'));
+  gulp.watch('./build/**/*.{css,js,html}').on('change', server.reload);
 });
 
 /* Build
