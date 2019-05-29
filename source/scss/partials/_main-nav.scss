@@ -6,6 +6,7 @@
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   &::after {
@@ -46,6 +47,9 @@
 .main-nav__heading {
   position: relative;
 
+  display: flex; /* IE11 fix */
+  justify-content: center; /* IE11 fix */
+
   @include xl {
     order: 2;
   }
@@ -70,15 +74,16 @@
   min-height: 80px;
 
   @include md {
-    padding-top: 10px;
+    min-height: $header-height;
   }
 
   @include xl {
-    padding-top: 8px;
     padding-right: 25px;
   }
 
   .logo__link {
+    transition: opacity $transition-time;
+
     &:hover,
     &:focus {
       outline: none;
@@ -113,12 +118,14 @@
     z-index: 1;
 
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
   }
 
   @include xl {
     position: static;
-    bottom: initial;
-    left: initial;
+    bottom: auto;
+    left: auto;
 
     order: 1;
   }
@@ -155,6 +162,7 @@
 
   font-size: $fs-base;
   line-height: $lh-base;
+  word-break: break-all;
 
   @include md {
     position: absolute;

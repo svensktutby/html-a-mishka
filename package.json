@@ -15,8 +15,9 @@
     "script:lint": "eslint 'source/js/parts/*.js'",
     "script:fix": "eslint 'source/js/parts/*.js' --fix",
     "test": "npm run style:lint && npm run script:lint",
-    "build": "gulp build",
-    "start": "npm run build && gulp serve"
+    "build:dev": "NODE_ENV=development gulp build",
+    "build:prod": "NODE_ENV=production gulp build",
+    "start": "npm run build:dev && gulp serve"
   },
   "devDependencies": {
     "browser-sync": "^2.26.5",
@@ -25,12 +26,15 @@
     "gulp": "^4.0.1",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-cache": "^1.1.1",
+    "gulp-changed": "^3.2.0",
     "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
+    "gulp-debug": "^4.0.0",
     "gulp-ext-replace": "^0.3.0",
     "gulp-htmlmin": "^5.0.1",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^5.0.3",
+    "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-posthtml": "^3.0.4",
     "gulp-rename": "^1.4.0",

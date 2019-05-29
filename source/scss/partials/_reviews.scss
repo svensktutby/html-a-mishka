@@ -39,6 +39,7 @@
   @include xl {
     @include container(xl);
 
+    padding-top: 70px;
     padding-bottom: 65px;
 
     background-position: $padding-xl 0;
@@ -49,13 +50,14 @@
   margin-bottom: 22px;
 
   @include md {
-    flex-basis: 450px;
+    width: 450px;
     order: 1;
     margin-bottom: 50px;
   }
 
   @include xl {
     padding-left: 175px;
+    width: 800px;
   }
 }
 
@@ -98,10 +100,12 @@
   padding-top: 18px;
 
   @include md {
+    max-width: 480px;
     padding-top: 48px;
   }
 
   @include xl {
+    max-width: 650px;
     padding-top: 28px;
   }
 }
@@ -187,7 +191,7 @@
 
 .reviews__write-button {
   @include md {
-    flex-basis: 176px;
+    width: 176px;
     order: 2;
   }
 

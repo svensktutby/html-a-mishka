@@ -5,6 +5,8 @@
 }
 
 .optional-nav__item {
+  display: flex; /* IE11 fix */
+
   @include md {
     border-left: 1px solid $border-color;
   }
@@ -39,7 +41,7 @@
 
   display: flex;
   align-items: center;
-  min-height: 87px;
+  min-height: 80px;
   padding-left: 45px;
 
   font-weight: 700;
@@ -52,6 +54,7 @@
   fill: rgba($black, 0.2);
 
   @include md {
+    min-height: $header-height;
     padding-left: 0;
   }
 
@@ -78,12 +81,14 @@
   top: 50%;
   left: 0;
 
+  max-height: 19px;
+
   transform: translateY(-50%);
 
   @include md {
     position: static;
-    top: initial;
-    left: initial;
+    top: auto;
+    left: auto;
 
     margin-right: 32px;
     margin-left: 32px;

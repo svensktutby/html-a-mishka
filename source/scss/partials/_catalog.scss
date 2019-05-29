@@ -17,6 +17,8 @@
 
   @include md {
     @include container(md);
+
+    overflow: hidden; /* IE11 fix */
   }
 
   @include xl {
