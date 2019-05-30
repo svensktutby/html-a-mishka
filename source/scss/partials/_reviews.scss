@@ -9,11 +9,7 @@
 
   @include md {
     padding-top: 0;
-    padding-bottom: 90px;
-  }
-
-  @include xl {
-    padding-bottom: 140px;
+    padding-bottom: 75px;
   }
 }
 
@@ -28,19 +24,23 @@
     justify-content: space-between;
     align-items: flex-start;
     padding-top: 75px;
+    padding-bottom: 15px;
 
-    background-image: url("../img/review@1x.jpg");
+    background-image: url("../../img/review@1x.jpg");
     background-repeat: no-repeat;
     background-position: 0 0;
 
     @include retina {
-      background-image: url("../img/review@2x.jpg");
+      background-image: url("../../img/review@2x.jpg");
       background-size: 350px auto;
     }
   }
 
   @include xl {
     @include container(xl);
+
+    padding-top: 70px;
+    padding-bottom: 65px;
 
     background-position: $padding-xl 0;
   }
@@ -50,13 +50,14 @@
   margin-bottom: 22px;
 
   @include md {
-    flex-basis: 450px;
+    width: 450px;
     order: 1;
     margin-bottom: 50px;
   }
 
   @include xl {
     padding-left: 175px;
+    width: 800px;
   }
 }
 
@@ -99,9 +100,12 @@
   padding-top: 18px;
 
   @include md {
+    max-width: 480px;
     padding-top: 48px;
   }
-  @include md {
+
+  @include xl {
+    max-width: 650px;
     padding-top: 28px;
   }
 }
@@ -137,6 +141,8 @@
     position: absolute;
     right: 0;
     bottom: 0;
+
+    margin-bottom: 35px;
   }
 }
 
@@ -185,7 +191,7 @@
 
 .reviews__write-button {
   @include md {
-    flex-basis: 176px;
+    width: 176px;
     order: 2;
   }
 

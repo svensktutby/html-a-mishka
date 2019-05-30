@@ -21,6 +21,7 @@
   font-size: 15px;
   color: $link-color;
   text-decoration: none;
+  word-break: break-all;
 
   transition: color $transition-time;
 

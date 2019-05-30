@@ -12,6 +12,7 @@
 @mixin font-size($fs: $fs-base, $lh: false) {
   //fs: $fs; /* Fallback in px */
   font-size: rem($fs);
+
   @if $lh != false {
     line-height: ($lh / $fs);
   }
@@ -23,6 +24,7 @@
   display: $display;
   max-width: $max-width;
   height: $height;
+
   @if $width != false {
     width: $width;
   }
@@ -31,13 +33,14 @@
 /* Clearfix
 ******************************/
 %clearfix {
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: "";
 
     display: table;
   }
-  &:after {
+
+  &::after {
     clear: both;
   }
 }
@@ -69,17 +72,6 @@
   list-style: none;
 }
 
-/* No outline
-******************************/
-@mixin no-outline {
-  background: transparent;
-  outline: none;
-
-  &::before {
-    display: none;
-  }
-}
-
 /* Circle
 ******************************/
 @mixin circle($size, $color) {
@@ -102,16 +94,21 @@
 ******************************/
 @mixin absol-center($horizontal: true, $vertical: true) {
   position: absolute;
+
   @if ($horizontal and $vertical) {
     top: 50%;
     left: 50%;
 
     transform: translate(-50%, -50%);
-  } @else if ($horizontal) {
+  }
+
+  @else if ($horizontal) {
     left: 50%;
 
     transform: translate(-50%, 0);
-  } @else if ($vertical) {
+  }
+
+  @else if ($vertical) {
     top: 50%;
 
     transform: translate(0, -50%);
@@ -142,28 +139,36 @@
 
   width: 0;
   height: 0;
+
   @if $round {
     border-radius: 3px;
   }
+
   @if $direction == down {
-    margin-top: 0 - round( $size / 2.5 );
+    margin-top: 0 - round($size / 2.5);
 
     border-top: $size solid $color;
     border-right: $size solid transparent;
     border-left: $size solid transparent;
-  } @else if $direction == up {
-    margin-bottom: 0 - round( $size / 2.5 );
+  }
+
+  @else if $direction == up {
+    margin-bottom: 0 - round($size / 2.5);
 
     border-right: $size solid transparent;
     border-bottom: $size solid $color;
     border-left: $size solid transparent;
-  } @else if $direction == right {
+  }
+
+  @else if $direction == right {
     margin-right: -$size;
 
     border-top: $size solid transparent;
     border-bottom: $size solid transparent;
     border-left: $size solid $color;
-  } @else if  $direction == left {
+  }
+
+  @else if  $direction == left {
     margin-left: -$size;
 
     border-top: $size solid transparent;
@@ -179,26 +184,31 @@
     @content;
   }
 } // Extra large devices
+
 @mixin lg {
   @media screen and (min-width: #{$screen-lg}) {
     @content;
   }
 } // Large devices
+
 @mixin md {
   @media screen and (min-width: #{$screen-md}) {
     @content;
   }
 } // Medium devices
+
 @mixin sm {
   @media screen and (min-width: #{$screen-sm}) {
     @content;
   }
 } // Small devices
+
 @mixin xs {
   @media screen and (min-width: #{$screen-xs}) {
     @content;
   }
 } // Tiny devices
+
 @mixin retina {
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     @content;
@@ -214,19 +224,27 @@
     width: $screen-xl;
     padding-right: $padding-xl;
     padding-left: $padding-xl;
-  } @else if $screen == lg {
+  }
+
+  @else if $screen == lg {
     width: $screen-lg;
     padding-right: $padding-lg;
     padding-left: $padding-lg;
-  } @else if $screen == md {
+  }
+
+  @else if $screen == md {
     width: $screen-md;
     padding-right: $padding-md;
     padding-left: $padding-md;
-  } @else if $screen == sm {
+  }
+
+  @else if $screen == sm {
     width: $screen-sm;
     padding-right: $padding-sm;
     padding-left: $padding-sm;
-  } @else if $screen == xs {
+  }
+
+  @else if $screen == xs {
     width: $screen-xs;
     padding-right: $padding-xs;
     padding-left: $padding-xs;
@@ -339,14 +357,14 @@
     &::before {
       height: 10px;
 
-      background-image: radial-gradient(circle at 15px -10px,transparent 20px,$white 20px);
+      background-image: radial-gradient(circle at 15px -10px, transparent 20px, $white 20px);
       background-size: 30px 20px;
     }
 
     &::after {
       height: 15px;
 
-      background-image: radial-gradient(circle at 15px 20px,$white 19px,transparent 18px);
+      background-image: radial-gradient(circle at 15px 20px, $white 19px, transparent 18px);
       background-size: 60px 20px;
     }
   }

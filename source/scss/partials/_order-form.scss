@@ -1,20 +1,26 @@
 /* order-form
 ============================== */
 .order-form {
-  padding-bottom: 55px;
-
   background-color: $white;
 }
 
-.order-form__fieldset {
-  padding-top: 10px;
+.order-form__fieldset-wrapper {
+  padding-top: 15px;
   padding-bottom: 15px;
 
   border: none;
 
   @include md {
-    padding-top: 55px;
-    padding-bottom: 55px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  &--type {
+    padding-top: 5px;
+
+    @include md {
+      padding-top: 32px;
+    }
   }
 
   &--color,
@@ -26,7 +32,11 @@
   }
 
   &--color {
-    .order-form__fieldset-inner {
+    @include md {
+      padding-bottom: 25px;
+    }
+
+    .order-form__fieldset {
       @include xl {
         padding-right: 155px;
       }
@@ -47,37 +57,42 @@
   &--phone {
     @include md {
       padding-top: 45px;
-      padding-bottom: 10px;
+      padding-bottom: 15px;
     }
   }
 
   &--email {
     @include md {
-      padding-top: 10px;
+      padding-top: 15px;
       padding-bottom: 45px;
     }
   }
 
   &--message {
-    padding-bottom: 15px;
+    padding-bottom: 17px;
 
     @include md {
-      margin-bottom: 40px;
+      margin-bottom: 55px;
+      padding-bottom: 0;
     }
 
     @include xl {
-      margin-bottom: 30px;
+      margin-bottom: 50px;
     }
   }
 }
 
-.order-form__fieldset-inner {
+.order-form__fieldset {
   @include container(xs);
+  @extend %clearfix;
+
+  padding-top: 0;
+  padding-bottom: 0;
+
+  border: none;
 
   @include md {
     @include container(md);
-
-    display: flex;
   }
 
   @include xl {
@@ -98,11 +113,15 @@
   font-size: 17px;
   color: $light-teal;
   text-transform: uppercase;
+  word-break: break-all;
 
   @include md {
+    float: left;
     width: 25%;
     margin-bottom: 0;
     padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
   }
 
   @include xl {
@@ -130,6 +149,7 @@
 
 .order-form__field-list {
   @include md {
+    float: left;
     width: 75%;
   }
 
@@ -137,11 +157,21 @@
     width: 86%;
   }
 
+  /* Flex IE11 fix */
+  &--type,
+  &--color {
+    .order-form__field {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
   &--color {
     @include md {
       display: flex;
       flex-wrap: wrap;
     }
+
     .order-form__field {
       @include md {
         width: 50%;
@@ -150,19 +180,6 @@
       @include xl {
         width: 33.333%;
       }
-
-      &:nth-child(5) {
-        @include md {
-          margin-bottom: 0;
-        }
-      }
-
-      &:nth-child(4),
-      &:nth-child(6) {
-        @include xl {
-          margin-bottom: 0;
-        }
-      }
     }
   }
 
@@ -170,8 +187,8 @@
     .order-form__field {
       @include md {
         display: flex;
-        align-items: flex-start;
-        margin-bottom: 20px;
+        align-items: center;
+        margin-bottom: 25px;
       }
     }
   }
@@ -183,8 +200,7 @@
   margin-bottom: 20px;
 
   @include md {
-    width: auto;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
   }
 
   &:last-child {
@@ -197,6 +213,7 @@
   font-size: 17px;
   line-height: 1.0588235294;
   color: $text-color-dark;
+
   transition: fill $transition-time;
 
   &--type,
@@ -213,7 +230,10 @@
     user-select: none;
 
     @include md {
+      min-height: 52px;
       padding-left: 80px;
+
+      word-break: break-all;
     }
 
     &::before {
@@ -255,6 +275,10 @@
   }
 
   &--type {
+    @include md {
+      width: 350px;
+    }
+
     &::before {
       border-radius: 50%;
     }
@@ -290,6 +314,7 @@
       height: 10px;
 
       background-color: transparent;
+      border-color: transparent;
       border-bottom: 2px solid $text-color-dark;
       border-left: 2px solid $text-color-dark;
       transform: rotate(-45deg);
@@ -309,7 +334,6 @@
 
     @include md {
       margin-right: 30px;
-      padding-top: 15px;
     }
   }
 
@@ -317,7 +341,7 @@
   &--email {
     position: absolute;
     top: 50%;
-    right: 0;
+    right: -5px;
 
     width: 32px;
     height: 32px;
@@ -393,6 +417,25 @@
       fill: $light-teal;
     }
   }
+
+  &--error {
+    border-color: $light-red;
+
+    &:hover,
+    &:focus {
+      border-color: $light-red;
+
+      & + .order-form__label,
+      & + .order-form__label {
+        fill: $light-red;
+      }
+    }
+
+    & + .order-form__label,
+    & + .order-form__label {
+      fill: $light-red;
+    }
+  }
 }
 
 .order-form__message {
@@ -448,23 +491,32 @@
 }
 
 .order-form__notification {
-  margin-bottom: 30px;
+  margin-bottom: 31px;
 
   font-size: 14px;
   line-height: 1.1428571429;
 
   @include md {
     margin-bottom: 0;
+    margin-left: 15px;
 
     font-size: 17px;
     line-height: 1.7647058824;
+    word-break: break-all;
+  }
+
+  &--error {
+    color: $light-red;
   }
 }
 
 .order-form__button {
   width: 100%;
 
+  cursor: pointer;
+
   @include md {
     width: 230px;
+    min-width: 230px;
   }
 }

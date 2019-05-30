@@ -1,10 +1,10 @@
 /* contacts
 ============================== */
 .contacts {
-  padding: 35px 0;
+  padding-top: 32px;
 
   @include md {
-    padding: 55px 0;
+    padding-top: 50px;
   }
 
   @include xl {
@@ -19,15 +19,19 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    max-height: 500px;
+    height: $map-height;
   }
 }
 
-.contacts__top {
+.contacts__heading {
   @include container(xs);
+
+  padding-top: 7px;
 
   @include md {
     @include container(md);
+
+    padding-top: 3px;
   }
 
   @include xl {
@@ -89,17 +93,19 @@
 }
 
 .contacts__list {
-  display: block;
   margin-bottom: 25px;
 
   border-collapse: collapse;
 
   @include md {
+    display: block;
     margin-bottom: 40px;
   }
 
   @include xl {
-    margin-bottom: 35px;
+    display: table;
+    min-width: 340px;
+    margin-bottom: 65px;
   }
 
   tbody {
@@ -109,7 +115,7 @@
     }
 
     @include xl {
-      display: initial;
+      display: table-row-group;
     }
   }
 }
@@ -123,7 +129,8 @@
   }
 
   @include xl {
-    display: initial;
+    display: table-row;
+    width: auto;
   }
 }
 
@@ -135,6 +142,7 @@
   line-height: 2;
   vertical-align: top;
   color: $text-color;
+  word-break: break-all;
 
   @include md {
     font-size: 17px;
@@ -155,7 +163,7 @@
     }
 
     @include xl {
-      width: 28%;
+      width: 22%;
     }
   }
 
@@ -167,7 +175,7 @@
     }
 
     @include xl {
-      width: 72%;
+      width: 78%;
     }
   }
 }
@@ -213,6 +221,8 @@
   width: 100%;
   margin-bottom: 38px;
 
+  background-color: $light-grey;
+
   @include md {
     margin-bottom: 55px;
   }
@@ -220,12 +230,31 @@
   @include xl {
     order: 3;
     width: 50%;
+    margin-bottom: 0;
   }
+
+  &--nojs {
+    .map__content {
+      display: none;
+    }
+
+    .contacts__img {
+      display: block;
+    }
+  }
+}
+
+.map__content {
+  width: 100%;
+  min-height: $map-height;
+  margin: 0 auto;
 }
 
 .contacts__img {
   @include img();
 
+  display: none;
+  min-height: $map-height;
   margin: 0 auto;
 }
 

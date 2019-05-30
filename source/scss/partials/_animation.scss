@@ -1,0 +1,29 @@
+/* animations
+============================== */
+@keyframes bounce {
+  0% {
+    top: -2000px;
+  }
+
+  70% {
+    top: 55%;
+  }
+
+  90% {
+    top: 45%;
+  }
+
+  100% {
+    top: 50%;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

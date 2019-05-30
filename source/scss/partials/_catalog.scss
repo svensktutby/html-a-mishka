@@ -2,6 +2,7 @@
 ============================== */
 .catalog {
   padding-top: 30px;
+
   @include md {
     padding-top: 80px;
   }
@@ -16,6 +17,8 @@
 
   @include md {
     @include container(md);
+
+    overflow: hidden; /* IE11 fix */
   }
 
   @include xl {
@@ -30,5 +33,21 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+}
+
+.catalog__item {
+  margin-bottom: 30px;
+
+  @include md {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 53px;
+  }
+
+  @include xl {
+    flex-direction: column;
+    width: 30%;
+    margin-bottom: 55px;
   }
 }

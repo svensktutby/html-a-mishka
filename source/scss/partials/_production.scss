@@ -1,13 +1,5 @@
 /* production
 ============================== */
-.production {
-  margin-bottom: 63px;
-
-  @include xl {
-    margin-bottom: 105px;
-  }
-}
-
 .production__inner {
   @include container(xs);
 
@@ -72,7 +64,7 @@
     width: 32px;
     height: 32px;
 
-    background-image: url(../img/icon-video.svg);
+    background-image: url("../../img/icon-video.svg");
     background-repeat: no-repeat;
     background-position: 0 0;
   }
@@ -88,7 +80,7 @@
   color: $text-color-dark;
 
   @include md {
-    max-width: initial;
+    max-width: none;
     padding-left: 35px;
 
     font-size: 20px;
@@ -104,6 +96,8 @@
 
 .production__video {
   position: relative;
+
+  background-color: $light-grey;
 
   @include md {
     order: 1;
@@ -124,6 +118,12 @@
 
 .production__image {
   @include img(100%);
+
+  min-height: 150px;
+
+  @include md {
+    min-height: 455px;
+  }
 }
 
 .production__play-button {

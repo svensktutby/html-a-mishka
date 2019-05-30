@@ -8,12 +8,16 @@
 
 html {
   box-sizing: border-box;
+  height: 100%;
 
   font-size: $fs-rem;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   min-width: 320px;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
 
@@ -31,15 +35,6 @@ body {
 }
 
 .section-title {
-  @include md {
-    font-size: 43px;
-    line-height: 1.1627906977;
-  }
-  @include xl {
-    font-size: 53px;
-    line-height: 1.0754716981;
-  }
-
   min-width: 0; //Fix for flex with word-wrap
   margin: 0 0 10px 0;
 
@@ -47,4 +42,14 @@ body {
   font-size: 25px;
   line-height: 1.2;
   color: $text-color-dark;
+
+  @include md {
+    font-size: 43px;
+    line-height: 1.1627906977;
+  }
+
+  @include xl {
+    font-size: 53px;
+    line-height: 1.0754716981;
+  }
 }

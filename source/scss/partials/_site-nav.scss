@@ -5,14 +5,13 @@
 }
 
 .site-nav__item {
+  display: flex; /* IE11 fix */
+
   @include md {
     margin-left: 35px;
   }
 
   @include xl {
-    display: flex;
-    align-items: center;
-
     border-left: 1px solid $border-color;
   }
 
@@ -31,6 +30,7 @@
       }
     }
   }
+
   &::before {
     @include pseudo();
 
@@ -59,6 +59,7 @@
   line-height: 1.4117647059;
   color: $link-color;
   text-decoration: none;
+  word-break: break-all;
 
   transition: color $transition-time;
 
@@ -71,7 +72,7 @@
   }
 
   @include xl {
-    min-height: 80px;
+    min-height: $header-height;
     padding-left: 35px;
 
     font-size: 17px;
