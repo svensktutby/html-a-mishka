@@ -1,6 +1,6 @@
 {
   "name": "mishka",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Личный проект «Мишка» от HTML Academy",
   "main": "gulpfile.js",
   "author": "svensk",
@@ -15,7 +15,6 @@
     "script:lint": "eslint 'source/js/parts/*.js'",
     "script:fix": "eslint 'source/js/parts/*.js' --fix",
     "test": "npm run style:lint && npm run script:lint",
-    "build:dev": "NODE_ENV=development gulp build",
     "build:prod": "NODE_ENV=production gulp build",
     "start": "npm run build:dev && gulp serve"
   },
@@ -34,6 +33,7 @@
     "gulp-htmlmin": "^5.0.1",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^5.0.3",
+    "gulp-modify-css-urls": "^2.0.0",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-posthtml": "^3.0.4",

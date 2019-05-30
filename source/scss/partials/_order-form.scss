@@ -84,7 +84,6 @@
 
 .order-form__fieldset {
   @include container(xs);
-
   @extend %clearfix;
 
   padding-top: 0;

@@ -7,6 +7,7 @@ const gulp = require('gulp'),
       changed = require('gulp-changed'),
       sourcemaps = require('gulp-sourcemaps'),
       sass = require('gulp-sass'),
+      modifyCssUrls = require('gulp-modify-css-urls'),
       minify = require('gulp-clean-css'),
       autoprefixer = require('gulp-autoprefixer'),
       rename = require('gulp-rename'),
@@ -63,12 +64,19 @@ gulp.task('styles', function () {
       ],
       cascade: false
     }))
-    .pipe(rename('style.min.css'))
-    .pipe(gulpIf(!isDev, minify()))
-    .pipe(gulpIf(isDev, sourcemaps.write()))
-    .pipe(gulp.dest('./build/css'))
+    .pipe(modifyCssUrls({
+      modify: function (url, filePath) {
+        return url.replace('../../', '../');
+      },
+      prepend: false,
+      append: false
+    }))
     .pipe(gulpIf(!isDev, rename('style.css')))
-    .pipe(gulpIf(!isDev, gulp.dest('./build/css')));
+    .pipe(gulpIf(!isDev, gulp.dest('./build/css')))
+    .pipe(rename('style.min.css'))
+    .pipe(gulpIf(isDev, sourcemaps.write()))
+    .pipe(gulpIf(!isDev, minify()))
+    .pipe(gulp.dest('./build/css'));
 });
 
 /* Scripts
@@ -79,19 +87,19 @@ gulp.task('scripts', function () {
     './source/js/parts/burger.js',
     './source/js/parts/menu.js',
     './source/js/parts/map.js',
-    './source/js/parts/modal-cart.js',
     './source/js/parts/validation.js',
     './source/js/parts/form.js',
+    './source/js/parts/modal-cart.js',
     './source/js/parts/main.js'
   ])
     .pipe(plumber({errorHandler: onError}))
+    .pipe(concat('script.js'))
+    .pipe(gulpIf(!isDev, gulp.dest('./build/js')))
     .pipe(gulpIf(isDev, sourcemaps.init()))
-    .pipe(concat('script.min.js'))
+    .pipe(rename('script.min.js'))
     .pipe(gulpIf(!isDev, uglify()))
     .pipe(gulpIf(isDev, sourcemaps.write()))
-    .pipe(gulp.dest('./build/js'))
-    .pipe(gulpIf(!isDev, rename('script.js')))
-    .pipe(gulpIf(!isDev, gulp.dest('./build/js')));
+    .pipe(gulp.dest('./build/js'));
 });
 
 /* HTML
@@ -162,6 +170,7 @@ gulp.task('webp', function () {
 ******************************/
 gulp.task('sprite:svg', function () {
   return gulp.src('./source/img/{icon-*,logo-*}.svg')
+    .pipe(debug({title: 'sprite:svg:', showFiles: false}))
     .pipe(svgstore({
       inlineSvg: true
     }))
